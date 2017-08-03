@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<context:component-scan base-package="planner" />
+	<context:annotation-config />
+
+	<context:property-placeholder
+		location="classpath:WebContent/WEB-INF/db.properties" />
+
+	<!-- DB -->
+	<bean class="org.apache.commons.dbcp2.BasicDataSource" id="dataSource">
+		<property value="${jdbc.driver}" name="driverClassName" />
+		<property value="${jdbc.url}" name="url" />
+		<property value="${jdbc.username}" name="username" />
+		<property value="${jdbc.password}" name="password" />
+	</bean>
+
+	<bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactory">
+		<property name="dataSource" ref="dataSource" />
+		<property value="classpath:sql/*.xml" name="mapperLocations" />
+	</bean>
+
+	<bean class="org.mybatis.spring.SqlSessionTemplate" id="sqlSession">
+		<constructor-arg ref="sqlSessionFactory" />
+	</bean>
+
+	<!-- DAO SQL 객체주입 -->
+
+	<bean class="planner.member.memberDAO" id="memberDAO">
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+	
+	<!-- Tiles -->
+
+	<bean class="org.springframework.web.servlet.view.tiles3.TilesViewResolver"
+		id="tilesviewResolver" />
+
+	<bean class="org.springframework.web.servlet.view.tiles3.TilesConfigurer"
+		id="tilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/tilesdef/tilesdef.xml</value>
+			</list>
+		</property>
+		<property
+			value="org.springframework.web.servlet.view.tiles3.SimpleSpringPreparerFactory"
+			name="preparerFactoryClass" />
+	</bean>
+
+
+	<!-- 경로지정 -->
+
+	<!-- <bean
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
+		id="multipartResolver">
+	</bean>
+	 -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+		id="viewResolver">
+		<property value="/WEB-INF/" name="prefix" />
+		<property value=".jsp" name="suffix" />
+	</bean>
+
+</beans>
