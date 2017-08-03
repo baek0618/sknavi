@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="scheduleMapper">
+
+	<!--/* C: shedule 생성 */ -->
+	<!--public int addSchedule(scheduleVO schedule); -->
+	<!-- <insert id="insertSchedule" parameterType="planner.schedule.scheduleVO>" -->
+
+	<!-- </insert> -->
+	<!--/* R: shedule 조회(전체) */ -->
+	
+	<!--public List<scheduleVO> getScheduleList(); -->
+	<!-- /* R: shedule 조회(id) */ -->
+	<!--public scheduleVO getSchedulebyId(String scheduleId); -->
+	<!-- /* U: shedule 수정 */ -->
+	<!-- public int updateSchedule(scheduleVO schedule); -->
+	<!-- /* D: shedule 삭제 */ -->
+	<!--public int removeSchedule(scheduleVO schedule); -->
+</mapper>
