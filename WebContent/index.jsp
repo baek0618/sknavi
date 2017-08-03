@@ -10,5 +10,6 @@
 	<h1>Planavi?</h1>
 	<br>
 	<a href="getMember.do?id=ky">테스트</a>
+	
 </body>
 </html>
