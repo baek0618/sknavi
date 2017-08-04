@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dayMapper">
+
+	<resultMap type="planner.day.DayVo" id="day-resultMap">
+		<result property="dayId" column="day_id" />
+		<result property="scheduleId" column="schedule_id" />
+		<result property="day" column="day" />
+		<result property="seq" column="seq" />
+		<result property="content" column="content" />
+		<result property="palce.placeId" column="place_id" />
+	</resultMap>
+	
+	<!-- Day 생성 -->
+	<insert id="insertDay" parameterType="planner.day.DayVo">
+		insert into day (schedule_id, day,seq,content,place_id)
+		values (#{scheduleId},#{day},#{seq},#{content},#{palce.placeId})
+	</insert>
+	
+	<!-- Day 한개 조회 -->
+	<select id="selectDay" parameterType="Integer" resultMap="day-resultMap">
+		select * 
+		from day 
+		where day_id = #{dayId} 
+	</select>
+
+	<!-- Day 조회(스케줄에 포함된 daylist) -->
+	<select id="selectDays" parameterType="Integer" resultMap="day-resultMap">
+		select * 
+		from day 
+		where schedule_id = #{scheduleId}
+	</select>
+
+	<!-- Day 한개 삭제 -->
+	<delete id="deleteDay" parameterType="planner.day.DayVo">
+		delete from day 
+		where day_id = #{dayId} 
+	</delete>
+	
+	<!-- Day 삭제 (스케줄에 포함된 day 모두 삭제) -->
+	<delete id="deleteDayByschedule" parameterType="Integer">
+		delete from day 
+		where schedule_id = #{scheduleId}
+	</delete>
+	
+	<!-- Day 수정 -->
+	<update id="updateDay" parameterType="planner.day.DayVo">
+		update day
+		set schedule_id = #{scheduleId} , day = #{day} , seq = #{seq}, content = ${content}, place_id = #{palce.placeId}
+		where day_id = #{dayId}
+	</update>
+</mapper>
