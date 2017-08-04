@@ -1,4 +1,4 @@
-package planner.place;
+package planner.day;
 
 public interface DayDAO {
 

@@ -1,4 +1,6 @@
-package planner.place;
+package planner.day;
+
+import planner.place.PlaceVO;
 
 public class DayVo {
 
