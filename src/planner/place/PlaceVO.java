@@ -1,6 +1,6 @@
 package planner.place;
 
-public class placeVO {
+public class PlaceVO {
 	private Integer placeId;
 	private String placeName;
 	private String placeTel;
@@ -8,9 +8,9 @@ public class placeVO {
 	private String placeLon;
 	private String placeLat;
 	
-	public placeVO() {}
+	public PlaceVO() {}
 
-	public placeVO(Integer placeId, String placeName, String placeTel, String detail, String placeLon,
+	public PlaceVO(Integer placeId, String placeName, String placeTel, String detail, String placeLon,
 			String placeLat) {
 		this.placeId = placeId;
 		this.placeName = placeName;
