@@ -9,29 +9,29 @@ public class DayDAOImpl implements DayDAO {
 	
 	@Autowired
 	SqlSession session;
-
+	
+	//Day 생성
 	@Override
 	public void addDay(DayVo dayVo) {
-		// TODO Auto-generated method stub
-
+		session.insert("dayMapper.insetDay", dayVo);
 	}
-
+	
+	//Day 조회
 	@Override
 	public DayVo getDay(Integer scheduleId) {
-		// TODO Auto-generated method stub
-		return null;
+		return session.selectOne("dayMapper.selectDay", scheduleId);
 	}
-
+	
+	//Day 한개 삭제
 	@Override
 	public void removeDay(DayVo dayVo) {
-		// TODO Auto-generated method stub
-
+		session.delete("dayMapper.deleteDay", dayVo);
 	}
-
+	
+	//Day 수정
 	@Override
 	public void updateDay(DayVo dayVo) {
-		// TODO Auto-generated method stub
-
+		session.update("dayMapper.updatetDay", dayVo);
 	}
 
 }
