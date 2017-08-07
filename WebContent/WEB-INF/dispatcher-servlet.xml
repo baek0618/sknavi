@@ -7,14 +7,14 @@
 	<context:component-scan base-package="planner" />
 	<context:annotation-config />
 
-	<!-- <context:property-placeholder location="classpath:db.properties" /> -->
+	<context:property-placeholder location="classpath:config/mapper/db.properties" />
 
 	<!-- DB -->
 	<bean class="org.apache.commons.dbcp2.BasicDataSource" id="dataSource">
-		<property value="com.mysql.jdbc.Driver" name="driverClassName" />
-		<property value="jdbc:mysql://localhost:3306/navi" name="url" />
-		<property value="navi" name="username" />
-		<property value="navi" name="password" />
+		<property value="${db.driver}" name="driverClassName" />
+		<property value="${db.url}" name="url" />
+		<property value="${db.username}" name="username" />
+		<property value="${db.password}" name="password" />
 	</bean>
 
 	<bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactory">
@@ -32,10 +32,6 @@
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
 
-
-	<bean class="planner.schedule.ScheduleDAOImpl" id="ScheduleDAO">
-		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
-	</bean>
 
 	<!-- Tiles -->
 
