@@ -3,42 +3,43 @@ package planner.schedule;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
+import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class ScheduleDAOImpl implements scheduleDAO {
+public class ScheduleDAOImpl extends SqlSessionDaoSupport implements ScheduleDAO {
 	@Autowired
 	SqlSession session;
-	
+
 	@Override
-	public int addSchedule(scheduleVO schedule) {
+	public int addSchedule(ScheduleVO schedule) {
 		/* C: shedule 생성 */
-		return session.insert("");
+		return session.insert("scheduleMapper.insertSchedule", schedule);
 	}
 
 	@Override
-	public List<scheduleVO> getScheduleList() {
+	public List<ScheduleVO> getScheduleList() {
 		/* R: shedule 조회(전체) */
-		return null;
+		return session.selectList("scheduleMapper.scheduleList");
 	}
 
 	@Override
-	public scheduleVO getSchedulebyId(String scheduleId) {
+	public ScheduleVO getSchedulebyId(String scheduleId) {
 		/* R: shedule 조회(id) */
-		return null;
+		return session.selectOne("scheduleMapper.scheduleById", scheduleId);
 	}
 
 	@Override
-	public int updateSchedule(scheduleVO schedule) {
+	public int updateSchedule(ScheduleVO schedule) {
 		/* U: shedule 수정 */
-		return 0;
+		return session.update("scheduleMapper.updateSchedule", schedule);
 	}
 
 	@Override
-	public int removeSchedule(scheduleVO schedule) {
+	public int removeSchedule(String scheduleId) {
 		/* D: shedule 삭제 */
-		return 0;
+		return session.delete("scheduleMapper.deleteSchedule", scheduleId);
 	}
 
 }

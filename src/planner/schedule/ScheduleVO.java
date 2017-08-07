@@ -2,7 +2,7 @@ package planner.schedule;
 
 import oracle.sql.DATE;
 
-public class scheduleVO {
+public class ScheduleVO {
 	private int scheduleId;
 	private DATE startDate;
 	private int day;
@@ -49,11 +49,11 @@ public class scheduleVO {
 		this.id = id;
 	}
 
-	public scheduleVO() {
+	public ScheduleVO() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public scheduleVO(int scheduleId, DATE startDate, int day, String subject, String id) {
+	public ScheduleVO(int scheduleId, DATE startDate, int day, String subject, String id) {
 		super();
 		this.scheduleId = scheduleId;
 		this.startDate = startDate;
