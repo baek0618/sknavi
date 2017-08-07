@@ -21,14 +21,12 @@ public class DayDAOImpl implements DayDAO {
 	//Day 한개 조회
 	@Override
 	public DayVo getDay(Integer dayId) {
-		System.out.println("getDay call");
 		return session.selectOne("dayMapper.selectDay", dayId);
 	}
 
 	//Day 조회(스케줄에 포함된 daylist)
 	@Override
 	public List<DayVo> getDays(Integer scheduleId) {
-		System.out.println("getDays call");
 		return session.selectList("dayMapper.selectDays", scheduleId);
 	}
 	
@@ -47,7 +45,7 @@ public class DayDAOImpl implements DayDAO {
 	//Day 수정
 	@Override
 	public void updateDay(DayVo dayVo) {
-		session.update("dayMapper.updatetDay", dayVo);
+		session.update("dayMapper.updateDay", dayVo);
 	}
 
 

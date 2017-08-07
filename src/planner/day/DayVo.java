@@ -71,6 +71,10 @@ public class DayVo {
 		this.palce = palce;
 	}
 
-
+	@Override
+	public String toString() {
+		return "DayVo [dayId=" + dayId + ", scheduleId=" + scheduleId + ", day=" + day + ", seq=" + seq + ", content="
+				+ content + ", palceId=" + palce.getPlaceId() + "]";
+	}
 
 }
