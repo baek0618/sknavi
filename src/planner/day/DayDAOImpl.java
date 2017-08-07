@@ -20,8 +20,8 @@ public class DayDAOImpl implements DayDAO {
 	
 	//Day 한개 조회
 	@Override
-	public DayVo getDay(Integer dayId) {
-		return session.selectOne("dayMapper.selectDay", dayId);
+	public DayVo getDay(DayVo dayVo) {
+		return session.selectOne("dayMapper.selectDay", dayVo);
 	}
 
 	//Day 조회(스케줄에 포함된 daylist)
@@ -32,8 +32,8 @@ public class DayDAOImpl implements DayDAO {
 	
 	//Day 한개 삭제
 	@Override
-	public void removeDay(Integer dayId) {
-		session.delete("dayMapper.deleteDay", dayId);
+	public void removeDay(DayVo dayVo) {
+		session.delete("dayMapper.deleteDay", dayVo);
 	}
 	
 	//Day 삭제 (스케줄에 포함된 day 모두 삭제)
