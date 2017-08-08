@@ -72,32 +72,26 @@ body, input, select, textarea {
 <script src="js/skel.min.js"></script>
 <script src="js/skel-layers.min.js"></script>
 <script src="js/init.js"></script>
+<script>
+	<!-- header load -->
+	$(document).ready(function() {
+		$("#header").load("header.html");
+	});
+</script>
+</head>
 
 </head>
+
 <body id="top">
+
 	<!-- Header -->
-
-	<header id="header" class="skel-layers-fixed">
-	<h1>
-		<a href="#">Ion</a>
-	</h1>
-	<nav id="nav">
-	<ul>
-
-		<li><a href="index.html">Home</a></li>
-		<li><a id="make-plan" href="#layer2">일정만들기</a></li>
-		<li><a href="right-sidebar.html">여행일정보기</a></li>
-		<li><a href="no-sidebar.html">여행지검색</a></li>
-
-		<li><a href="#" class="button special">Sign Up</a></li>
-	</ul>
-	</nav> </header>
+	<header id="header" class="skel-layers-fixed"> header 여기들어옴 </header>
 
 	<section id="main"> <header class="major">
-	<h2>Right Sidebar</h2>
-	<p>Tempus adipiscing commodo ut aliquam blandit</p>
+	<h2>구 서울역사</h2>
+	<p>주소 : 구 서울역사 주소</p>
 	</header>
-	<div class="container">
+	<div class="container box">
 		<div class="row">
 			<div class="baek2">
 				<section>
@@ -172,16 +166,17 @@ body, input, select, textarea {
 
 	</div>
 	</section>
-	<div
+	<div class="box special"
 		style="margin-left: auto; margin-right: auto; width: 1200px; height: 200px; margin-bottom: 100px">
 		<h2>상세설명</h2>
 		싱가포르 중심에 위치해 찾기 쉬우면서도 스파가 많은 나무로 둘러싸여 있어 숲 속에 있는 듯한 편안함을 느낄 수 있는 곳이다.
 		높은 명성에 비해 소규모로 운영되고있어 보다 전문적이고 세심한 서비스를 누릴 수 있다. 싱가포르 중심에 위치해 찾기 쉬우면서도
 		스파가 많은 나무로 둘러싸여 있어 숲 속에 있는 듯한 편안함을 느낄 수 있는 곳이다. 높은 명성에 비해 소규모로 운영되고있어
-		보다 전문적이고 세심한 서비스를 누릴 수 있다. 싱가포르 중심에 위치해 찾기 쉬우면서도 스파가 많은 나무로 둘러싸여 있어 숲
-		속에 있는 듯한 편안함을 느낄 수 있는 곳이다. 높은 명성에 비해 소규모로 운영되고있어 보다 전문적이고 세심한 서비스를 누릴
-		수 있다.
+		보다 전문적이
+
 	</div>
+
+	
 
 
 
