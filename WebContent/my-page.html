@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="css/skel.css" />
 <link rel="stylesheet" href="css/style.css" />
 <link rel="stylesheet" href="css/style-xlarge.css" />
-<link rel="stylesheet" href="css/plan-detail-page.css" />
+<link rel="stylesheet" href="css/my-page.css" />
 <script>
 	<!-- header load -->
 	$(document).ready(function() {
@@ -37,63 +37,68 @@
 		<!-- 여기는 다른 header html파일을 넣자 -->
 	</div>
 
+	<!-- banner -->
+	<section id="banner">
+		<div class="inner">
+			<h2>나의 여행 계획 리스트</h2>
+
+		</div>
+	</section>
+
 	<!-- Main -->
-	<section id="main" class="wrapper style1">
-		<header class="major">
-			<h2>싱가폴 여행계획</h2>
-			<p>2017.07.05 ~ 2017.07.10</p>
-
+	<section id="main" class="wrapper style1 container">
+		<header class="major m_top">
+			<div class="m-tab">
+				완성된 일정(<span class="com-cnt">0</span>)
+			</div>
+			<div class="mtab-line"></div>
+			<div class="m-tab">
+				계획중인 일정(<span class="plan-cnt">0</span>)
+			</div>
+			<div class="mtab-line"></div>
+			<div class="m-tab">
+				좋아한 일정(<span class="like-cnt">0</span>)
+			</div>
+			<div class="m-tab-r">
+				<a href="#" class="button alt">여행일정만들기</a>
+			</div>
 		</header>
-		<section id="content" class="loc-container">
-			<div class="box loc-container-left">
-				<section class="day box">
+		<section id="content" class="plans-container">
 
-					<h2>Day-1</h2>
-					<hr class="major" />
-					<div class="s-item ">
+			<div class="row">
+				<div class="4u">
+					<section class="special box">
 						<a href="#"><img class="item-image" src="images/banner.jpg" /></a>
-						<div class="item-content">
-							<h3 class="item-loc">구 서울역사</h3>
-							<p class="item-detail">간단한 설명 - et mi ac magna cep lobortis
-								faucibus accumsan enim lacinia adipiscing metus urna adipiscing
-								cep commodo id. Ac quis arcu amet. Arcu n</p>
-						</div>
-					</div>
-					<hr class="major" />
-					<div class="s-item ">
+						<hr class="mitem" />
+						<h3 class="item-loc">구 서울역사</h3>
+						<p class="item-detail">간단한 설명 - et mi ac magna cep lobortis
+							faucibus accumsan enim lacinia adipiscing metus urna adipiscing
+							cep commodo id. Ac quis arcu amet. Arcu n</p>
+					</section>
+				</div>
+				<div class="4u">
+					<section class="special box">
 						<a href="#"><img class="item-image" src="images/banner.jpg" /></a>
-						<div class="item-content">
-							<h3 class="item-loc">구 서울역사</h3>
-							<p class="item-detail">간단한 설명 - et mi ac magna cep lobortis
-								faucibus accumsan enim lacinia adipiscing metus urna adipiscing
-								cep commodo id. Ac quis arcu amet. Arcu n</p>
-						</div>
-					</div>
-					<hr class="major" />
-
-				</section>
-				<section class="day box">
-
-					<h2>Day-2</h2>
-					<hr class="major" />
-					<div class="s-item ">
+						<hr class="mitem" />
+						<h3 class="item-loc">구 서울역사</h3>
+						<p class="item-detail">간단한 설명 - et mi ac magna cep lobortis
+							faucibus accumsan enim lacinia adipiscing metus urna adipiscing
+							cep commodo id. Ac quis arcu amet. Arcu n</p>
+					</section>
+				</div>
+				<div class="4u">
+					<section class="special box">
 						<a href="#"><img class="item-image" src="images/banner.jpg" /></a>
-						<div class="item-content">
-							<h3 class="item-loc">구 서울역사</h3>
-							<p class="item-detail">간단한 설명 : et mi ac magna cep lobortis
-								faucibus accumsan enim lacinia adipiscing metus urna adipiscing
-								cep commodo id. Ac quis arcu amet. Arcu n</p>
-						</div>
-					</div>
-					<hr class="major" />
-				</section>
+						<hr class="mitem" />
+						<h3 class="item-loc">구 서울역사</h3>
+						<p class="item-detail">간단한 설명 - et mi ac magna cep lobortis
+							faucibus accumsan enim lacinia adipiscing metus urna adipiscing
+							cep commodo id. Ac quis arcu amet. Arcu n</p>
+					</section>
+				</div>
 			</div>
-			<!-- left fixed box -->
-			<div class="fixbox box loc-container-right">
-				 <div>fixed map and contents</div>
-				<hr class="major" />
-				 <div> 날씨</div>
-			</div>
+
+
 		</section>
 	</section>
 

@@ -105,9 +105,12 @@
 		hr.major {
 			margin: 2em 0 5em 0;
 		}
-		
 
-	blockquote {
+		hr.mitem {
+				margin: 1em 0 1em 0;
+		}
+
+blockquote {
 		border-left: solid 4px rgba(144, 144, 144, 0.25);
 		font-style: italic;
 		margin: 0 0 2em 0;
