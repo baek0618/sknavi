@@ -49,35 +49,34 @@
 </script>
 
 <script type="text/javascript">
-	$(document).ready(function(){
-		$(document).on('click','.travel_city',function(){
+	$(document).ready(function() {
+		$(document).on('click', '.travel_city', function() {
 			var _this_show = $(this).attr('data-show');
-			$('.travel_city').each(function(){
-				if($(this).attr('data-show') != _this_show){
+			$('.travel_city').each(function() {
+				if ($(this).attr('data-show') != _this_show) {
 					$(this).removeClass('on');
-					$('.city_arrow',this).attr('src',$('.city_arrow').attr('src').replace('_on.gif','.gif'));				
-					$(this).attr('data-on','off');
-					$('.travel_hide[data-id='+$(this).attr('data-show')+']').slideUp('fast');
+					$('.city_arrow', this).attr('src', $('.city_arrow').attr('src').replace('_on.gif', '.gif'));
+					$(this).attr('data-on', 'off');
+					$('.travel_hide[data-id=' + $(this).attr('data-show') + ']').slideUp('fast');
 				}
 			});
 
-			if($(this).attr('data-on') == 'off'){
+			if ($(this).attr('data-on') == 'off') {
 				$(this).addClass('on');
-				$('.city_arrow',this).attr('src',$('.city_arrow').attr('src').replace('.gif','_on.gif'));
-				$(this).attr('data-on','on');
-				$('.travel_hide[data-id='+$(this).attr('data-show')+']').slideDown();
-			}else{
+				$('.city_arrow', this).attr('src', $('.city_arrow').attr('src').replace('.gif', '_on.gif'));
+				$(this).attr('data-on', 'on');
+				$('.travel_hide[data-id=' + $(this).attr('data-show') + ']').slideDown();
+			} else {
 				$('.travel_city').removeClass('on');
-				$('.city_arrow',this).attr('src',$('.city_arrow').attr('src').replace('_on.gif','.gif'));
-				$(this).attr('data-on','off');
-				$('.travel_hide[data-id='+$(this).attr('data-show')+']').slideUp();
+				$('.city_arrow', this).attr('src', $('.city_arrow').attr('src').replace('_on.gif', '.gif'));
+				$(this).attr('data-on', 'off');
+				$('.travel_hide[data-id=' + $(this).attr('data-show') + ']').slideUp();
 			}
 		});
 
-		
-	});
 
-</script>	
+	});
+</script>
 </head>
 
 <body id="top">
@@ -109,8 +108,6 @@
 	<section id="one" class="wrapper style1">
 
 	<div class="content_filter container">
-
-
 		<div class="area_silver">
 			<div class="wrap">
 				<div class="area_title">국내 여행지</div>
@@ -186,125 +183,94 @@
 					</div>
 
 					<div class="travel_hide" data-id="001">
-						<a href="#" class="travel_ar"> 강릉 </a> <a
-							href="#" class="travel_ar"> 고성 </a> <a
-							href="#" class="travel_ar"> 동해 </a> <a
-							href="#" class="travel_ar"> 삼척 </a> <a
-							href="#" class="travel_ar"> 속초 </a> <a
-							href="#" class="travel_ar"> 양구 </a> <a
-							href="#" class="travel_ar"> 양양 </a> <a
-							href="#" class="travel_ar"> 영월 </a> <a
-							href="#" class="travel_ar"> 원주 </a> <a
-							href="#" class="travel_ar"> 인제 </a> <a
-							href="#" class="travel_ar"> 정선 </a> <a
-							href="#" class="travel_ar"> 철원 </a> <a
-							href="#" class="travel_ar"> 춘천 </a> <a
-							href="#" class="travel_ar"> 태백 </a> <a
-							href="#" class="travel_ar"> 평창 </a>
-						<a href="#" class="travel_ar"> 홍천 </a>
-						<a href="#" class="travel_ar"> 화천 </a> <a
-							href="#" class="travel_ar"> 횡성 </a>
+						<a href="#" class="travel_ar"> 강릉 </a> <a href="#"
+							class="travel_ar"> 고성 </a> <a href="#" class="travel_ar"> 동해
+						</a> <a href="#" class="travel_ar"> 삼척 </a> <a href="#"
+							class="travel_ar"> 속초 </a> <a href="#" class="travel_ar"> 양구
+						</a> <a href="#" class="travel_ar"> 양양 </a> <a href="#"
+							class="travel_ar"> 영월 </a> <a href="#" class="travel_ar"> 원주
+						</a> <a href="#" class="travel_ar"> 인제 </a> <a href="#"
+							class="travel_ar"> 정선 </a> <a href="#" class="travel_ar"> 철원
+						</a> <a href="#" class="travel_ar"> 춘천 </a> <a href="#"
+							class="travel_ar"> 태백 </a> <a href="#" class="travel_ar"> 평창
+						</a> <a href="#" class="travel_ar"> 홍천 </a> <a href="#"
+							class="travel_ar"> 화천 </a> <a href="#" class="travel_ar"> 횡성
+						</a>
 						<div class="clear"></div>
 					</div>
 					<div class="travel_hide" data-id="002">
-						<a href="#" class="travel_ar"> 가평 </a> <a
-							href="#" class="travel_ar"> 고양 </a> <a
-							href="#" class="travel_ar"> 과천 </a> <a
-							href="#" class="travel_ar"> 광명 </a> <a
-							href="#" class="travel_ar"> 광주 </a> <a
-							href="#" class="travel_ar"> 구리 </a> <a
-							href="#" class="travel_ar"> 군포 </a> <a
-							href="#" class="travel_ar"> 김포 </a> <a
-							href="#" class="travel_ar"> 남양주 </a> <a
-							href="#" class="travel_ar"> 동두천 </a>
-						<a href="#" class="travel_ar"> 부천 </a> <a
-							href="#" class="travel_ar"> 성남 </a> <a
-							href="#" class="travel_ar"> 수원 </a> <a
-							href="#" class="travel_ar"> 시흥 </a> <a
-							href="#" class="travel_ar"> 안산 </a> <a
-							href="#" class="travel_ar"> 안성 </a> <a
-							href="#" class="travel_ar"> 안양 </a> <a
-							href="#" class="travel_ar"> 양주 </a> <a
-							href="#" class="travel_ar"> 양평 </a> <a
-							href="#" class="travel_ar"> 여주 </a> <a
-							href="#" class="travel_ar"> 연천 </a> <a
-							href="#" class="travel_ar"> 오산 </a> <a
-							href="#" class="travel_ar"> 용인 </a> <a
-							href="#" class="travel_ar"> 의왕 </a> <a
-							href="#" class="travel_ar"> 의정부 </a> <a
-							href="#" class="travel_ar"> 이천 </a> <a
-							href="#" class="travel_ar"> 파주 </a> <a
-							href="#" class="travel_ar"> 평택 </a> <a
-							href="#" class="travel_ar"> 포천 </a> <a
-							href="#" class="travel_ar"> 하남 </a> <a
-							href="#" class="travel_ar"> 화성 </a>
+						<a href="#" class="travel_ar"> 가평 </a> <a href="#"
+							class="travel_ar"> 고양 </a> <a href="#" class="travel_ar"> 과천
+						</a> <a href="#" class="travel_ar"> 광명 </a> <a href="#"
+							class="travel_ar"> 광주 </a> <a href="#" class="travel_ar"> 구리
+						</a> <a href="#" class="travel_ar"> 군포 </a> <a href="#"
+							class="travel_ar"> 김포 </a> <a href="#" class="travel_ar"> 남양주
+						</a> <a href="#" class="travel_ar"> 동두천 </a> <a href="#"
+							class="travel_ar"> 부천 </a> <a href="#" class="travel_ar"> 성남
+						</a> <a href="#" class="travel_ar"> 수원 </a> <a href="#"
+							class="travel_ar"> 시흥 </a> <a href="#" class="travel_ar"> 안산
+						</a> <a href="#" class="travel_ar"> 안성 </a> <a href="#"
+							class="travel_ar"> 안양 </a> <a href="#" class="travel_ar"> 양주
+						</a> <a href="#" class="travel_ar"> 양평 </a> <a href="#"
+							class="travel_ar"> 여주 </a> <a href="#" class="travel_ar"> 연천
+						</a> <a href="#" class="travel_ar"> 오산 </a> <a href="#"
+							class="travel_ar"> 용인 </a> <a href="#" class="travel_ar"> 의왕
+						</a> <a href="#" class="travel_ar"> 의정부 </a> <a href="#"
+							class="travel_ar"> 이천 </a> <a href="#" class="travel_ar"> 파주
+						</a> <a href="#" class="travel_ar"> 평택 </a> <a href="#"
+							class="travel_ar"> 포천 </a> <a href="#" class="travel_ar"> 하남
+						</a> <a href="#" class="travel_ar"> 화성 </a>
 						<div class="clear"></div>
 					</div>
 					<div class="travel_hide" data-id="003">
-						<a href="#" class="travel_ar"> 거제 </a> <a
-							href="#" class="travel_ar"> 거창 </a> <a
-							href="#" class="travel_ar"> 고성 </a> <a
-							href="#" class="travel_ar"> 김해 </a> <a
-							href="#" class="travel_ar"> 남해 </a> <a
-							href="#" class="travel_ar"> 마산 </a> <a
-							href="#" class="travel_ar"> 밀양 </a> <a
-							href="#" class="travel_ar"> 사천 </a> <a
-							href="#" class="travel_ar"> 산청 </a> <a
-							href="#" class="travel_ar"> 양산 </a> <a
-							href="#" class="travel_ar"> 의령 </a> <a
-							href="#" class="travel_ar"> 진주 </a> <a
-							href="#" class="travel_ar"> 진해 </a> <a
-							href="#" class="travel_ar"> 창녕 </a>
-						<a href="#" class="travel_ar"> 창원 </a> <a
-							href="#" class="travel_ar"> 통영 </a> <a
-							href="#" class="travel_ar"> 하동 </a> <a
-							href="#" class="travel_ar"> 함안 </a> <a
-							href="#" class="travel_ar"> 함양 </a> <a
-							href="#" class="travel_ar"> 합천 </a>
+						<a href="#" class="travel_ar"> 거제 </a> <a href="#"
+							class="travel_ar"> 거창 </a> <a href="#" class="travel_ar"> 고성
+						</a> <a href="#" class="travel_ar"> 김해 </a> <a href="#"
+							class="travel_ar"> 남해 </a> <a href="#" class="travel_ar"> 마산
+						</a> <a href="#" class="travel_ar"> 밀양 </a> <a href="#"
+							class="travel_ar"> 사천 </a> <a href="#" class="travel_ar"> 산청
+						</a> <a href="#" class="travel_ar"> 양산 </a> <a href="#"
+							class="travel_ar"> 의령 </a> <a href="#" class="travel_ar"> 진주
+						</a> <a href="#" class="travel_ar"> 진해 </a> <a href="#"
+							class="travel_ar"> 창녕 </a> <a href="#" class="travel_ar"> 창원
+						</a> <a href="#" class="travel_ar"> 통영 </a> <a href="#"
+							class="travel_ar"> 하동 </a> <a href="#" class="travel_ar"> 함안
+						</a> <a href="#" class="travel_ar"> 함양 </a> <a href="#"
+							class="travel_ar"> 합천 </a>
 						<div class="clear"></div>
 					</div>
 					<div class="travel_hide" data-id="004">
-						<a href="#" class="travel_ar"> 경산 </a> <a
-							href="#" class="travel_ar"> 경주 </a> <a
-							href="#" class="travel_ar"> 고령 </a> <a
-							href="#" class="travel_ar"> 구미 </a> <a
-							href="#" class="travel_ar"> 군위 </a> <a
-							href="#" class="travel_ar"> 김천 </a> <a
-							href="#" class="travel_ar"> 문경 </a> <a
-							href="#" class="travel_ar"> 봉화 </a> <a
-							href="#" class="travel_ar"> 상주 </a> <a
-							href="#" class="travel_ar"> 성주 </a> <a
-							href="#" class="travel_ar"> 안동 </a> <a
-							href="#" class="travel_ar"> 영덕 </a> <a
-							href="#" class="travel_ar"> 영양 </a> <a
-							href="#" class="travel_ar"> 영주 </a> <a
-							href="#" class="travel_ar"> 영천 </a> <a
-							href="#" class="travel_ar"> 예천 </a> <a
-							href="#" class="travel_ar"> 울릉 </a> <a
-							href="#" class="travel_ar"> 울진 </a> <a
-							href="#" class="travel_ar"> 의성 </a> <a
-							href="#" class="travel_ar"> 청도 </a> <a
-							href="#" class="travel_ar"> 청송 </a> <a
-							href="#" class="travel_ar"> 칠곡 </a> <a
-							href="#" class="travel_ar"> 포항 </a>
+						<a href="#" class="travel_ar"> 경산 </a> <a href="#"
+							class="travel_ar"> 경주 </a> <a href="#" class="travel_ar"> 고령
+						</a> <a href="#" class="travel_ar"> 구미 </a> <a href="#"
+							class="travel_ar"> 군위 </a> <a href="#" class="travel_ar"> 김천
+						</a> <a href="#" class="travel_ar"> 문경 </a> <a href="#"
+							class="travel_ar"> 봉화 </a> <a href="#" class="travel_ar"> 상주
+						</a> <a href="#" class="travel_ar"> 성주 </a> <a href="#"
+							class="travel_ar"> 안동 </a> <a href="#" class="travel_ar"> 영덕
+						</a> <a href="#" class="travel_ar"> 영양 </a> <a href="#"
+							class="travel_ar"> 영주 </a> <a href="#" class="travel_ar"> 영천
+						</a> <a href="#" class="travel_ar"> 예천 </a> <a href="#"
+							class="travel_ar"> 울릉 </a> <a href="#" class="travel_ar"> 울진
+						</a> <a href="#" class="travel_ar"> 의성 </a> <a href="#"
+							class="travel_ar"> 청도 </a> <a href="#" class="travel_ar"> 청송
+						</a> <a href="#" class="travel_ar"> 칠곡 </a> <a href="#"
+							class="travel_ar"> 포항 </a>
 						<div class="clear"></div>
 					</div>
 
 					<div class="travel_section">
-						<a href="#" class="travel_city" data-on="off"
-							data-show="link">
+						<a href="#" class="travel_city" data-on="off" data-show="link">
 							<div>
 								<span>서울</span>
 								<div class="clear"></div>
 							</div>
-						</a> <a href="#" class="travel_city" data-on="off"
-							data-show="link">
+						</a> <a href="#" class="travel_city" data-on="off" data-show="link">
 							<div>
 								<span>울산</span>
 								<div class="clear"></div>
 							</div>
-						</a> <a href="#" class="travel_city"
-							data-on="off" data-show="link">
+						</a> <a href="#" class="travel_city" data-on="off" data-show="link">
 							<div>
 								<span>인천</span>
 								<div class="clear"></div>
@@ -324,8 +290,7 @@
 								<div class="clear"></div>
 							</div>
 						</div>
-						<a href="#" class="travel_city" data-on="off"
-							data-show="link">
+						<a href="#" class="travel_city" data-on="off" data-show="link">
 							<div>
 								<span>제주도</span>
 								<div class="clear"></div>
@@ -348,84 +313,136 @@
 						<div class="clear"></div>
 					</div>
 					<div class="travel_hide" data-id="005">
-						<a href="#" class="travel_ar"> 강진 </a> <a
-							href="#" class="travel_ar"> 고흥 </a> <a
-							href="#" class="travel_ar"> 곡성 </a> <a
-							href="#" class="travel_ar"> 광양 </a> <a
-							href="#" class="travel_ar"> 구례 </a> <a
-							href="#" class="travel_ar"> 나주 </a> <a
-							href="#" class="travel_ar"> 담양 </a> <a
-							href="#" class="travel_ar"> 목포 </a> <a
-							href="#" class="travel_ar"> 무안 </a> <a
-							href="#" class="travel_ar"> 보성 </a> <a
-							href="#" class="travel_ar"> 순천 </a> <a
-							href="#" class="travel_ar"> 신안 </a> <a
-							href="#" class="travel_ar"> 여수 </a> <a
-							href="#" class="travel_ar"> 영광 </a> <a
-							href="#" class="travel_ar"> 영암 </a> <a
-							href="#" class="travel_ar"> 완도 </a> <a
-							href="#" class="travel_ar"> 장성 </a> <a
-							href="#" class="travel_ar"> 장흥 </a> <a
-							href="#" class="travel_ar"> 진도 </a> <a
-							href="#" class="travel_ar"> 함평 </a> <a
-							href="#" class="travel_ar"> 해남 </a> <a
-							href="#" class="travel_ar"> 화순 </a>
+						<a href="#" class="travel_ar"> 강진 </a> <a href="#"
+							class="travel_ar"> 고흥 </a> <a href="#" class="travel_ar"> 곡성
+						</a> <a href="#" class="travel_ar"> 광양 </a> <a href="#"
+							class="travel_ar"> 구례 </a> <a href="#" class="travel_ar"> 나주
+						</a> <a href="#" class="travel_ar"> 담양 </a> <a href="#"
+							class="travel_ar"> 목포 </a> <a href="#" class="travel_ar"> 무안
+						</a> <a href="#" class="travel_ar"> 보성 </a> <a href="#"
+							class="travel_ar"> 순천 </a> <a href="#" class="travel_ar"> 신안
+						</a> <a href="#" class="travel_ar"> 여수 </a> <a href="#"
+							class="travel_ar"> 영광 </a> <a href="#" class="travel_ar"> 영암
+						</a> <a href="#" class="travel_ar"> 완도 </a> <a href="#"
+							class="travel_ar"> 장성 </a> <a href="#" class="travel_ar"> 장흥
+						</a> <a href="#" class="travel_ar"> 진도 </a> <a href="#"
+							class="travel_ar"> 함평 </a> <a href="#" class="travel_ar"> 해남
+						</a> <a href="#" class="travel_ar"> 화순 </a>
 						<div class="clear"></div>
 					</div>
 					<div class="travel_hide" data-id="006">
-						<a href="#" class="travel_ar"> 고창 </a> <a
-							href="#" class="travel_ar"> 군산 </a> <a
-							href="#" class="travel_ar"> 김제 </a> <a
-							href="#" class="travel_ar"> 남원 </a> <a
-							href="#" class="travel_ar"> 무주 </a> <a
-							href="#" class="travel_ar"> 부안 </a> <a
-							href="#" class="travel_ar"> 순창 </a> <a
-							href="#" class="travel_ar"> 완주 </a> <a
-							href="#" class="travel_ar"> 익산 </a> <a
-							href="#" class="travel_ar"> 임실 </a> <a
-							href="#" class="travel_ar"> 장수 </a> <a
-							href="#" class="travel_ar"> 전주 </a> <a
-							href="#" class="travel_ar"> 정읍 </a> <a
-							href="#" class="travel_ar"> 진안 </a>
+						<a href="#" class="travel_ar"> 고창 </a> <a href="#"
+							class="travel_ar"> 군산 </a> <a href="#" class="travel_ar"> 김제
+						</a> <a href="#" class="travel_ar"> 남원 </a> <a href="#"
+							class="travel_ar"> 무주 </a> <a href="#" class="travel_ar"> 부안
+						</a> <a href="#" class="travel_ar"> 순창 </a> <a href="#"
+							class="travel_ar"> 완주 </a> <a href="#" class="travel_ar"> 익산
+						</a> <a href="#" class="travel_ar"> 임실 </a> <a href="#"
+							class="travel_ar"> 장수 </a> <a href="#" class="travel_ar"> 전주
+						</a> <a href="#" class="travel_ar"> 정읍 </a> <a href="#"
+							class="travel_ar"> 진안 </a>
 						<div class="clear"></div>
 					</div>
 					<div class="travel_hide" data-id="007">
-						<a href="#" class="travel_ar"> 공주 </a> <a
-							href="#" class="travel_ar"> 금산 </a> <a
-							href="#" class="travel_ar"> 논산 </a> <a
-							href="#" class="travel_ar"> 당진 </a> <a
-							href="#" class="travel_ar"> 보령 </a> <a
-							href="#" class="travel_ar"> 부여 </a> <a
-							href="#" class="travel_ar"> 서산 </a> <a
-							href="#" class="travel_ar"> 서천 </a> <a
-							href="#" class="travel_ar"> 아산 </a> <a
-							href="#" class="travel_ar"> 예산 </a> <a
-							href="#" class="travel_ar"> 천안 </a> <a
-							href="#" class="travel_ar"> 청양 </a> <a
-							href="#" class="travel_ar"> 태안 </a> <a
-							href="#" class="travel_ar"> 홍성 </a> <a
-							href="#" class="travel_ar"> 계룡 </a>
+						<a href="#" class="travel_ar"> 공주 </a> <a href="#"
+							class="travel_ar"> 금산 </a> <a href="#" class="travel_ar"> 논산
+						</a> <a href="#" class="travel_ar"> 당진 </a> <a href="#"
+							class="travel_ar"> 보령 </a> <a href="#" class="travel_ar"> 부여
+						</a> <a href="#" class="travel_ar"> 서산 </a> <a href="#"
+							class="travel_ar"> 서천 </a> <a href="#" class="travel_ar"> 아산
+						</a> <a href="#" class="travel_ar"> 예산 </a> <a href="#"
+							class="travel_ar"> 천안 </a> <a href="#" class="travel_ar"> 청양
+						</a> <a href="#" class="travel_ar"> 태안 </a> <a href="#"
+							class="travel_ar"> 홍성 </a> <a href="#" class="travel_ar"> 계룡
+						</a>
 						<div class="clear"></div>
 					</div>
 					<div class="travel_hide" data-id="008">
-						<a href="#" class="travel_ar"> 괴산 </a> <a
-							href="#" class="travel_ar"> 단양 </a> <a
-							href="#" class="travel_ar"> 보은 </a> <a
-							href="#" class="travel_ar"> 영동 </a> <a
-							href="#" class="travel_ar"> 옥천 </a> <a
-							href="#" class="travel_ar"> 음성 </a> <a
-							href="#" class="travel_ar"> 제천 </a> <a
-							href="#" class="travel_ar"> 진천 </a> <a
-							href="#" class="travel_ar"> 청원 </a> <a
-							href="#" class="travel_ar"> 청주 </a> <a
-							href="#" class="travel_ar"> 충주 </a> <a
-							href="#" class="travel_ar"> 증평 </a>
+						<a href="#" class="travel_ar"> 괴산 </a> <a href="#"
+							class="travel_ar"> 단양 </a> <a href="#" class="travel_ar"> 보은
+						</a> <a href="#" class="travel_ar"> 영동 </a> <a href="#"
+							class="travel_ar"> 옥천 </a> <a href="#" class="travel_ar"> 음성
+						</a> <a href="#" class="travel_ar"> 제천 </a> <a href="#"
+							class="travel_ar"> 진천 </a> <a href="#" class="travel_ar"> 청원
+						</a> <a href="#" class="travel_ar"> 청주 </a> <a href="#"
+							class="travel_ar"> 충주 </a> <a href="#" class="travel_ar"> 증평
+						</a>
 						<div class="clear"></div>
 					</div>
 				</div>
 			</div>
 		</div>
 
+	</div>
+	</section>
+
+	<section>
+	<div class="container">
+		<div class="row">
+			<div class="4u">
+				<section class="special box"> <a href="#"><img
+					class="item-image" src="images/banner.jpg" /></a>
+				<hr class="mitem" />
+				<h3 class="item-loc">구 서울역사</h3>
+				<p class="item-detail">간단한 설명 - et mi ac magna cep lobortis
+					faucibus accumsan enim lacinia adipiscing metus urna adipiscing cep
+					commodo id. Ac quis arcu amet. Arcu n</p>
+				</section>
+			</div>
+			<div class="4u">
+				<section class="special box"> <a href="#"><img
+					class="item-image" src="images/banner.jpg" /></a>
+				<hr class="mitem" />
+				<h3 class="item-loc">구 서울역사</h3>
+				<p class="item-detail">간단한 설명 - et mi ac magna cep lobortis
+					faucibus accumsan enim lacinia adipiscing metus urna adipiscing cep
+					commodo id. Ac quis arcu amet. Arcu n</p>
+				</section>
+			</div>
+			<div class="4u">
+				<section class="special box"> <a href="#"><img
+					class="item-image" src="images/banner.jpg" /></a>
+				<hr class="mitem" />
+				<h3 class="item-loc">구 서울역사</h3>
+				<p class="item-detail">간단한 설명 - et mi ac magna cep lobortis
+					faucibus accumsan enim lacinia adipiscing metus urna adipiscing cep
+					commodo id. Ac quis arcu amet. Arcu n</p>
+				</section>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="4u">
+				<section class="special box"> <a href="#"><img
+					class="item-image" src="images/banner.jpg" /></a>
+				<hr class="mitem" />
+				<h3 class="item-loc">구 서울역사</h3>
+				<p class="item-detail">간단한 설명 - et mi ac magna cep lobortis
+					faucibus accumsan enim lacinia adipiscing metus urna adipiscing cep
+					commodo id. Ac quis arcu amet. Arcu n</p>
+				</section>
+			</div>
+			<div class="4u">
+				<section class="special box"> <a href="#"><img
+					class="item-image" src="images/banner.jpg" /></a>
+				<hr class="mitem" />
+				<h3 class="item-loc">구 서울역사</h3>
+				<p class="item-detail">간단한 설명 - et mi ac magna cep lobortis
+					faucibus accumsan enim lacinia adipiscing metus urna adipiscing cep
+					commodo id. Ac quis arcu amet. Arcu n</p>
+				</section>
+			</div>
+			<div class="4u">
+				<section class="special box"> <a href="#"><img
+					class="item-image" src="images/banner.jpg" /></a>
+				<hr class="mitem" />
+				<h3 class="item-loc">구 서울역사</h3>
+				<p class="item-detail">간단한 설명 - et mi ac magna cep lobortis
+					faucibus accumsan enim lacinia adipiscing metus urna adipiscing cep
+					commodo id. Ac quis arcu amet. Arcu n</p>
+				</section>
+			</div>
+		</div>
 	</div>
 	</section>
 

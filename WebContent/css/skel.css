@@ -102,17 +102,17 @@
 
 			.row + .row > * {
 				/* padding: (gutters.horizontal) 0 0 (gutters.vertical) */
-				padding: 0 0 0 4em;
+				padding: 0 0 0 2em;
 			}
 
 			.row {
 				/* margin-left: -(gutters.vertical) */
-				margin-left: -4em;
+				margin-left: -2em;
 			}
 
 			.row + .row.uniform > * {
 				/* padding: (gutters.vertical) 0 0 (gutters.vertical) */
-				padding: 4em 0 0 4em;
+				padding: 2em 0 0 2em;
 			}
 
 		/* Flush */
