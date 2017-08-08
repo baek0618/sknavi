@@ -8,7 +8,6 @@ $(document).ready(function() {
 	});
 
 
-
 	$('#login_btn').click(function() {
 		var $href = $(this).attr('href');
 
