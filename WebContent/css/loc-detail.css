@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+.baek1 {
+	width: 100%;
+	margin-top: 100px;
+	height: 270px;
+}
+
+section.bb {
+	margin-top: 100px;
+	height: 30%;
+}
+
+*, *:before, *:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box
+}
+
+.row:first-child>* {
+	padding-top: 0 !important;
+}
+
+.row>* {
+	padding-left: 10%;
+}
+
+.baek2 {
+	width: 50%;
+	height: 900px;
+}
+
+.baek3 {
+	width: 50%;
+	height: 900px;
+}
+
+.row>* {
+	float: left;
+}
+
+body, input, select, textarea {
+	color: #555f66;
+	font-family: "Roboto", Helvetica, sans-serif;
+	font-size: 14pt;
+	font-weight: 300;
+	line-height: 1.75em;
+}

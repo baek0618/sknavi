@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+#menu{
+	float:left;
+}
+
+.inner{
+	test-align : center;
+}

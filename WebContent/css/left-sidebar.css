@@ -1,0 +1,51 @@
+html, body {
+    position: absolute;
+    height: 100%;
+}
+.plan-box{
+    position: absolute;
+    float: left;
+    background: blue;
+    width: wrap;
+    height: 91.5%;
+
+}
+.plan-left-box {
+  display: inline-block;
+  position : absolute;
+  top : 0px;
+  left : 0px;
+  width: wrap;
+  height: 100%;
+  background: green;
+}
+.plan-right-box {
+  display: inline-block;
+  top : 0px;
+  left : 300px;
+  width: 200px;
+  height: 100%;
+  background: #99feef;
+}
+.plan-day {
+  display: inline-block;
+  position : absolute;
+   top: 0px;
+  left :0px;
+  width: 65px;
+  height: inherit;
+  background: #12ee11;
+}
+.day{
+	display:inline-block;
+}
+.plan-item{
+  display: inline-block;
+  position : absolute;
+  top: 0px;
+  left :65px;
+  width: 150px;
+  height: inherit;
+  background: #12ff01;
+}
+
