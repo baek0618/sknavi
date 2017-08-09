@@ -13,20 +13,22 @@ $(document).ready(function() {
 
 		login_popup($href);
 	});
-	
+
 	$('#sign-btn').click(function() {
-		
+
 		var $href = $(this).attr('href');
 		sign_popup($href);
 	});
-	
+
 	function login_popup(el) {
 		var $el = $(el); // 레이어의 id를 $el 변수에 저장
 		var isDim = $el.prev().hasClass('dimBg2'); //dimmed 레이어를 감지하기 위한 boolean 변수
 
-
+		
 		isDim ? $('.log-layer').fadeIn() : $el.fadeIn();
 
+
+		
 		var $elWidth = ~~($el.outerWidth()),
 			$elHeight = ~~($el.outerHeight()),
 			docWidth = $(document).width(),
@@ -44,9 +46,9 @@ $(document).ready(function() {
 				left : 0
 			});
 		}
-
+		$('.pop-conts input').val(""); 
 		$el.find('a.btn-layerClose').click(function() {
-			
+
 			isDim ? $('.log-layer').fadeOut() : $el.fadeOut(); // 닫기 버튼을 클릭하면 레이어가 닫힌다.
 		});
 
@@ -81,10 +83,11 @@ $(document).ready(function() {
 				left : 0
 			});
 		}
-
+		$('.pop-conts input').val(""); 
+		//$('.start-date').val(""); 
 		$el.find('a.btn-layerClose').click(function() {
 			isDim ? $('.dim-layer').fadeOut() : $el.fadeOut(); // 닫기 버튼을 클릭하면 레이어가 닫힌다.
-			
+
 		});
 
 		$('.layer .dimBg').click(function() {
@@ -93,13 +96,13 @@ $(document).ready(function() {
 		});
 
 	}
-	
-	
+
+
 	function sign_popup(el) {
 		var $el = $(el); // 레이어의 id를 $el 변수에 저장
 		var isDim = $el.prev().hasClass('dimBg3'); //dimmed 레이어를 감지하기 위한 boolean 변수
-		
-	
+
+
 		isDim ? $('.sign-layer').fadeIn() : $el.fadeIn();
 
 		var $elWidth = ~~($el.outerWidth()),
@@ -119,7 +122,7 @@ $(document).ready(function() {
 				left : 0
 			});
 		}
-
+		$('.pop-conts input').val(""); 
 		$el.find('a.btn-layerClose').click(function() {
 			isDim ? $('.sign-layer').fadeOut() : $el.fadeOut(); // 닫기 버튼을 클릭하면 레이어가 닫힌다.
 		});

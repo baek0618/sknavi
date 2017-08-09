@@ -29,12 +29,12 @@
 
 .m_top {
     padding-top: 40px;
-    width: 1096px;
+    width: 100%;
     margin: 0 auto;
 }
 
 .m-tab-r{
-	 float: right;
+	float: right;
     color: #555555;
     font-size: 14px;
     font-weight: bold;

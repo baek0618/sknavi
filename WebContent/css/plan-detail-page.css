@@ -35,18 +35,19 @@
 	margin-left: auto;
 	margin-right: auto;
 	/* width: (loc-containers) */
-	width: 1600px;
+	width: 85%;
 }
 
 .loc-container-left{
 	
-	width:1250px;
+	width:75%;
 }
 
 .loc-container-right{
 	position: fixed;
-	left :75%;
+	left :72%;
 	top: 250px;
+	width:20%;
 
 }
 .commented-item{
@@ -73,4 +74,13 @@
 }
 .commented-item div{
 	margin: 0 1em;
+}
+
+.show{
+	    visibility: show;
+	    z-index:10;
+}
+
+.hidden{
+	    visibility: hidden;
 }
