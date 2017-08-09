@@ -3,7 +3,7 @@ $(document).ready(function() {
 
 	$('#make-plan').click(function() {
 		var $href = $(this).attr('href');
-		alert($href); //layer2
+		
 		layer_popup($href);
 	});
 
@@ -46,6 +46,7 @@ $(document).ready(function() {
 		}
 
 		$el.find('a.btn-layerClose').click(function() {
+			
 			isDim ? $('.log-layer').fadeOut() : $el.fadeOut(); // 닫기 버튼을 클릭하면 레이어가 닫힌다.
 		});
 
