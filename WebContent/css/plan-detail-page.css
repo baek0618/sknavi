@@ -49,3 +49,28 @@
 	top: 250px;
 
 }
+.commented-item{
+	position: static;
+	background-color : #efefef;
+	border-radius: 4px;
+}
+
+.comment-top {
+	overflow: hidden;
+	zoom: 1; 
+}
+.comment-top > * {
+	display : inline-block;
+}
+.comment-top > span{
+	float:right;
+}
+.comment-top > h4{
+	float: left;
+}
+.comment-time{
+	float :left
+}
+.commented-item div{
+	margin: 0 1em;
+}

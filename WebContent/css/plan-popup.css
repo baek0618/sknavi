@@ -126,10 +126,10 @@ a.btn-layerClose {
 }
 
 a.btn-layerClose:hover {
-	background-color: #192024;
+	background-color: #102000;
 	border-radius: 6px;
 	border: 0;
-	color: #ffffff !important;
+	color: #ffdddf !important;
 	cursor: pointer;
 	display: inline-block;
 	font-weight: 300;
