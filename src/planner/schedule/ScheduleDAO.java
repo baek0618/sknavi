@@ -3,6 +3,7 @@ package planner.schedule;
 import java.util.List;
 
 public interface ScheduleDAO {
+	
 	/* C: shedule 생성 */
 	public int addSchedule(ScheduleVO schedule);
 
@@ -17,5 +18,4 @@ public interface ScheduleDAO {
 
 	/* D: shedule 삭제 */
 	public int removeSchedule(String scheduleId);
-
 }

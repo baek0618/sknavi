@@ -6,11 +6,30 @@ public class memberVO {
 	private String name;
 	private String birth;
 	private String phone;
-	private Integer admin;
-	
-	public memberVO(){}
+	private Integer admin = 0;
 
-	public memberVO(String id, String password, String name, String birth, String phone, Integer admin) {;
+	public memberVO() {
+
+	}
+
+	public memberVO(String id, String password) {
+
+		this.id = id;
+		this.password = password;
+
+	}
+
+	public memberVO(String id, String password, String name, String birth, String phone) {
+
+		this.id = id;
+		this.password = password;
+		this.name = name;
+		this.birth = birth;
+		this.phone = phone;
+	}
+
+	public memberVO(String id, String password, String name, String birth, String phone, Integer admin) {
+		;
 		this.id = id;
 		this.password = password;
 		this.name = name;
@@ -66,5 +85,11 @@ public class memberVO {
 	public void setAdmin(Integer admin) {
 		this.admin = admin;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "memberVO [id=" + id + ", password=" + password + ", name=" + name + ", birth=" + birth + ", phone="
+				+ phone + ", admin=" + admin + "]";
+	}
+
 }

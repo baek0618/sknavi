@@ -1,10 +1,11 @@
 package planner.schedule;
 
-import oracle.sql.DATE;
+import java.util.Date;
 
 public class ScheduleVO {
+
 	private int scheduleId;
-	private DATE startDate;
+	private Date startDate;
 	private int day;
 	private String subject;
 	private String id;
@@ -17,11 +18,11 @@ public class ScheduleVO {
 		this.scheduleId = scheduleId;
 	}
 
-	public DATE getStartDate() {
+	public Date getStartDate() {
 		return startDate;
 	}
 
-	public void setStartDate(DATE startDate) {
+	public void setStartDate(Date startDate) {
 		this.startDate = startDate;
 	}
 
@@ -53,7 +54,7 @@ public class ScheduleVO {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ScheduleVO(int scheduleId, DATE startDate, int day, String subject, String id) {
+	public ScheduleVO(int scheduleId, Date startDate, int day, String subject, String id) {
 		super();
 		this.scheduleId = scheduleId;
 		this.startDate = startDate;
@@ -67,5 +68,4 @@ public class ScheduleVO {
 		return "scheduleVO [scheduleId=" + scheduleId + ", startDate=" + startDate + ", day=" + day + ", subject="
 				+ subject + ", id=" + id + "]";
 	}
-
 }

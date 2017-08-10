@@ -1,14 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<!--
-	Ion by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
-<!-- 여기서 아래 추가 설명 창 만들기, 그리고 되면 javascript로 plan-detail에서 동적으로 변하게 설정하기 -->
 <html>
-
 <head>
 <title>Ion by TEMPLATED</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -39,6 +32,7 @@
 <link rel="stylesheet" href="css/style.css" />
 <link rel="stylesheet" href="css/style-xlarge.css" />
 <link rel="stylesheet" href="css/plan-detail-page.css" />
+<link rel="stylesheet" href="css/plan-popup.css" />
 <script>
 	<!-- header load -->
 	$(document).ready(function() {
@@ -73,15 +67,13 @@
 					faucibus accumsan enim lacinia adipiscing metus urna adipiscing cep
 					commodo id. Ac quis arcu amet. Arcu n</p>
 			</div>
-			<div class="opinion-content hidden">
-				<form>
-					<fieldset>
-						<legend>Your comments</legend>
-						<p>
-							<textarea class="noscrollbars"></textarea>
-						</p>
-					</fieldset>
-				</form>
+			<div class="opinion-content">
+				<legend>Your comments <a> show </a></legend>
+				<p class="hidden">et mi ac magna cep lobortis faucibus accumsan enim lacinia
+					adipiscing metus urna adipiscing cep commodo id. Ac quis arcu amet.
+					Aet mi ac magna cep lobortis faucibus accumsan enim lacinia
+					adipiscing metus urna adipiscing cep commodo id. Ac quis arcu amet.
+					A</p>
 			</div>
 		</div>
 		<hr class="mitem" />
@@ -119,22 +111,40 @@
 					faucibus accumsan enim lacinia adipiscing metus urna adipiscing cep
 					commodo id. Ac quis arcu amet. Arcu n</p>
 			</div>
-			<div class="opinion-content hidden">
-				<form>
-					<fieldset>
-						<legend>Your comments</legend>
-						<p>
-							<textarea class="noscrollbars"></textarea>
-						</p>
-					</fieldset>
-				</form>
+			<div class="opinion-content">
+
+				<legend>Your comments</legend>
+				<p>et mi ac magna cep lobortis faucibus accumsan enim lacinia
+					adipiscing metus urna adipiscing cep commodo id. Ac quis arcu amet.
+					Aet mi ac magna cep lobortis faucibus accumsan enim lacinia
+					adipiscing metus urna adipiscing cep commodo id. Ac quis arcu amet.
+					A</p>
+
 			</div>
 		</div>
 		<hr class="mitem" />
 
 		</section>
 
-		<a href="#" class="share_btn button alt"> 공유페이지로 올리기 </a>
+		<a href="#share" class="share_btn button alt"> 공유페이지로 올리기 </a>
+
+		<!-- 공유할껀지 물어보는 팝업 -->
+		<div class="share-layer">
+			<div class="dimBg4"></div>
+			<div id="share" class="pop-layer">
+				<div class="pop-container">
+					<div class="pop-conts">
+						<!--content //-->
+						<p class="ctxt mb20">공유하시겠습니까?</p>
+						<div class="button alt">
+							<a href="schedule-detail.html" class="">공유하기</a>
+						</div>
+						<!--// content-->
+					</div>
+				</div>
+			</div>
+		</div>
+
 
 	</div>
 	<!-- left fixed box -->

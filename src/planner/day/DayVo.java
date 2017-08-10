@@ -4,6 +4,7 @@ import planner.place.PlaceVO;
 
 public class DayVo {
 	
+	private Integer dayId;
 	private Integer scheduleId;
 	private Integer day;
 	private Integer seq;
@@ -14,11 +15,20 @@ public class DayVo {
 	
 	public DayVo(Integer dayId ,Integer scheduleId, Integer day, Integer seq, String content, PlaceVO palce) {
 		super();
+		this.dayId = dayId;
 		this.scheduleId = scheduleId;
 		this.day = day;
 		this.seq = seq;
 		this.content = content;
 		this.palce = palce;
+	}
+	
+	public Integer getDayId() {
+		return dayId;
+	}
+
+	public void setDayId(Integer dayId) {
+		this.dayId = dayId;
 	}
 	
 	public Integer getScheduleId() {
@@ -61,10 +71,6 @@ public class DayVo {
 		this.palce = palce;
 	}
 
-	@Override
-	public String toString() {
-		return "DayVo [scheduleId=" + scheduleId + ", day=" + day + ", seq=" + seq + ", content=" + content + ", palce="
-				+ palce.getPlaceId() + "]";
-	}
+
 
 }
