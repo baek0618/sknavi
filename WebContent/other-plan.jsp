@@ -59,7 +59,7 @@
 	<!-- banner -->
 	<section id="banner">
 	<div class="inner">
-		<h2>여행지 검색</h2>
+		<h2>다른 계획 보기</h2>
 		<p class="search-box ">
 			<span class="input-group"> <input type="text"
 				class="form-control" placeholder="Search for..."> <span
