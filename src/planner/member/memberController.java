@@ -26,6 +26,7 @@ public class memberController {
 
 	@Autowired
 	memberDAO memberDao; 
+	memberVO globalVO;
 	
 	@RequestMapping("/getMember.do")
 	
@@ -46,16 +47,18 @@ public class memberController {
 	}
 	
 	@RequestMapping("/insertMember.do")
-	public String insertMember(@ModelAttribute memberVO vo) {
+	public String insertMember(@ModelAttribute memberVO vo, HttpSession session) {
 		System.out.println("insert");
 		//memberVO vo = new memberVO(id,password,name,phone);
 		System.out.println(vo);
 		int cnt = memberDao.insertMember(vo);
 		System.out.println(cnt);
 		if (cnt == 0 ) {
-			System.out.println("중복된 아이디입니다.");
+			System.out.println("회원가입 실패");
 			
 		}
+		if (vo.getName().equals("N"))
+			session.setAttribute("userId",vo.getPassword());
 		return "index2";
 	}
 	
@@ -119,13 +122,33 @@ public class memberController {
 			}
 	}
 	
+	@RequestMapping("/fLogin.do")
+	
+	public String fLogin(@RequestParam String fID,@RequestParam String fPW, HttpSession session) {
+			System.out.println("페북 로그인 시도..");
+			globalVO = memberDao.loginCheck(new memberVO(fID,fPW));
+			System.out.println("전역 vo" +globalVO);
+			if (globalVO != null) {
+				session.setAttribute("userId",fPW);
+				
+				return "redirect:/index2.jsp";
+			}
+			else {
+				System.out.println("로그인실패");
+				//session.setAttribute("err",0);
+				insertMember(new memberVO(fID,fPW),session);
+				return "redirect:/index2.jsp";
+			}
+	}
+
+	
+
 	@RequestMapping("/logout.do")
 	public String logout(HttpSession session) {
 		System.out.println("로그아웃");
 		memberDao.logOut(session);
 		return "redirect:/index2.jsp";
 	}
-	
 	
 
 }

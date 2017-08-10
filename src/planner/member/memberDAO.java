@@ -18,10 +18,11 @@ public class memberDAO extends SqlSessionDaoSupport{
 	
 	public int insertMember(memberVO vo)  {
 		int result = 0;
+		System.out.println("dap : " + vo);
 		try {
 		 result = getSqlSession().insert("memberMapper.insertMember", vo);
 		}catch(Exception e) {
-			System.out.println("아이디 중복");
+			System.out.println("dao 회원가입 예외발생");
 		}
 		return result;
 	}

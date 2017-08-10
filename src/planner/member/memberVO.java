@@ -2,10 +2,10 @@ package planner.member;
 
 public class memberVO {
 	private String id;
-	private String password;
-	private String name;
-	private String birth;
-	private String phone;
+	private String password ="N";
+	private String name="N";
+	private String birth="20170101";
+	private String phone ="N";
 	private Integer admin = 0;
 
 	public memberVO() {

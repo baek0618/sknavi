@@ -3,6 +3,7 @@
 <mapper namespace="dayMapper">
 
 	<resultMap type="planner.day.DayVo" id="day-resultMap">
+		<result property="dayId" column="day_id" />
 		<result property="scheduleId" column="schedule_id" />
 		<result property="day" column="day" />
 		<result property="seq" column="seq" />
@@ -12,17 +13,15 @@
 	
 	<!-- Day 생성 -->
 	<insert id="insertDay" parameterType="planner.day.DayVo">
-		insert into day
+		insert into day (schedule_id, day,seq,content,place_id)
 		values (#{scheduleId},#{day},#{seq},#{content},#{palce.placeId})
 	</insert>
 	
-	<!-- Day 한개 조회  -->
-	<select id="selectDay" parameterType="planner.day.DayVo" resultMap="day-resultMap">
+	<!-- Day 한개 조회 -->
+	<select id="selectDay" parameterType="Integer" resultMap="day-resultMap">
 		select * 
-		from day
-		where schedule_id = #{scheduleId}
-		and day = #{day}
-		and seq = #{seq}
+		from day 
+		where day_id = #{dayId} 
 	</select>
 
 	<!-- Day 조회(스케줄에 포함된 daylist) -->
@@ -35,8 +34,7 @@
 	<!-- Day 한개 삭제 -->
 	<delete id="deleteDay" parameterType="planner.day.DayVo">
 		delete from day 
-		where schedule_id = #{scheduleId}
-		and day = #{day} and seq = #{seq}
+		where day_id = #{dayId} 
 	</delete>
 	
 	<!-- Day 삭제 (스케줄에 포함된 day 모두 삭제) -->
@@ -48,9 +46,7 @@
 	<!-- Day 수정 -->
 	<update id="updateDay" parameterType="planner.day.DayVo">
 		update day
-		set content = '${content}', place_id = #{palce.placeId}
-		where schedule_id = #{scheduleId}
-		and day = #{day}
-		and seq = #{seq}
+		set schedule_id = #{scheduleId} , day = #{day} , seq = #{seq}, content = ${content}, place_id = #{palce.placeId}
+		where day_id = #{dayId}
 	</update>
 </mapper>

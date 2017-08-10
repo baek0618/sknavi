@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="boardMapper">
+
+	<select id="viewDetailBoard" parameterType="int" resultType="planner.board.boardVO" >
+		select board_id, board_date, board_img_path, board_content, board_hit, board_like 
+		  from board 
+		where board_id=#{value}
+	</select>
+	
+	<select id="viewAllBoards" resultType="planner.board.boardVO" >
+		select *
+		  from board
+	</select>
+
+	<update id="improveOfHit" parameterType="planner.board.boardVO">
+		update board
+			 set board_hit = #{board_hit}
+		 where board_id = #{board_id}
+	</update>
+	
+	<update id="improveOfLike" parameterType="planner.board.boardVO">
+		update board
+			 set board_like = #{board_like}
+		 where board_id = #{board_id}
+	</update>
+	
+	<insert id="addComment" parameterType="planner.comment.commentVO">
+		insert into comments(comments, comment_date, id, board_id)
+     		 values(#{comments}, #{comment_date}, #{member.id}, #{board.board_id})
+	</insert>
+	
+	<select id="viewAllComments" parameterType="planner.board.boardVO" resultType="planner.comment.commentVO">
+		select comment_id, comments, comment_date
+		  from comments
+		where board_id=#{board_id}
+	</select>
+	
+	<update id="updateComment" parameterType="planner.comment.commentVO">
+		update comments
+		     set comments=#{comments}
+		 where board_id=#{board.board_id}
+		    and id = #{member.id}
+		    and comment_id = #{comment_id}
+	</update>
+	
+	<delete id="deleteComment" parameterType="planner.comment.commentVO">
+		delete from comments
+		 where board_id=#{board.board_id}
+		    and id = #{member.id}
+		    and comment_id = #{comment_id}
+	</delete>
+</mapper>

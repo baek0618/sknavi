@@ -2,8 +2,27 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="memberMapper">
 
-	<select id="getMember" parameterType="String" resultType="planner.member.memberVO" >
-		select *  from member where id = #{value}
+	<select id="getMember" parameterType="String" resultType="planner.member.memberVO">
+		select * from member where id = #{value}
+	</select>
+
+	<insert id="insertMember" parameterType="planner.member.memberVO">
+		insert into member
+		values(#{id}, #{password}, #{name}, #{birth},
+		#{phone}, #{admin})
+	</insert>
+
+	<select id="getAllUser" resultType="planner.member.memberVO">
+		select * from member
+	</select>
+
+	<delete id="deleteUser" parameterType="String">
+		delete from member where
+		id=#{id}
+	</delete>
+	
+	<select id="login" parameterType="planner.member.memberVO" resultType="planner.member.memberVO">
+		select * from member where id = #{id} and password = #{password}
 	</select>
 
 </mapper>

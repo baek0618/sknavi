@@ -2,39 +2,47 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="scheduleMapper">
 
+	<resultMap type="planner.schedule.ScheduleVO" id="schedule-resultMap">
+		<id property="scheduleId" column="schedule_id" />
+		<result property="startDate" column="start_date"/>
+		<result property="day" column="day"/>
+		<result property="subject" column="subject"/>
+		<result property="id" column="id"/>
+	</resultMap>
+
 	<!--/* C: shedule 생성 */ -->
 	<insert id="insertSchedule" parameterType="planner.schedule.ScheduleVO">
-		insert into schedule
-		values ( schedule_id=#{scheduleId}, start_date=#{startDate},
-		day=#{day}, subject=#{subject}, id=#{id}, location=#{location})
-	</insert>
+	insert into schedule
+	values ( schedule_id=#{scheduleId},
+		start_date=#{startDate}, day=#{day}, subject=#{subject}, id=#{id},
+		location=#{location})
+		</insert>
 
 	<!--/* R: shedule 조회(전체) */ -->
-	<select id="scheduleList" resultType="planner.schedule.ScheduleVO">
-		select * from schedule
+	<select id="scheduleList" resultMap="schedule-resultMap">
+	select *
+	from schedule
 	</select>
 
 	<!-- /* R: shedule 조회(id) */ -->
-	<select id="scheduleById" parameterType="String"
-		resultType="planner.schedule.ScheduleVO">
-		select * from schedule where schedule_id=${scheduleId}
-	</select>
-	<!-- /* U: shedule 수정 */ -->
-	<!-- public int updateSchedule(scheduleVO schedule); -->
-	<update id="updateSchedule" parameterType="planner.schedule.ScheduleVO">
-		update schedule set
-		start_date =#{startDate},
-		day = #{day},
-		subject=#{subject},
-		location=#{location}
-		where schedule_id =#{scheduleId} and id=#{id};
+	<select id="scheduleById" parameterType="String"  resultMap="schedule-resultMap">
+		select *
+		from schedule
+		where schedule_id=${scheduleId}
+		</select>
 
+	<!-- /* U: shedule 수정 */ -->
+	<update id="updateSchedule" parameterType="planner.schedule.ScheduleVO" >
+	update  schedule
+	set start_date =#{startDate}, day = #{day},
+		subject=#{subject}, location=#{location}
+		where schedule_id=#{scheduleId}
+		and id=#{id}
 	</update>
 
-
 	<!-- /* D: shedule 삭제 */ -->
-	<delete id="deleteSchedule" parameterType="String">
-		delete from schedule
-		where schedule_id=#{scheduleId};
+	<delete id="deleteSchedule" parameterType="integer">
+	delete from schedule
+	where schedule_id=#{scheduleId}
 	</delete>
 </mapper>
