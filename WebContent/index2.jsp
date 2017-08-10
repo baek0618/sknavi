@@ -149,7 +149,7 @@ function addMember(){
 		</h1>
 		<nav id="nav">
 			<ul>
-				<li><a href="my-page.html">나의일정리스트</a></li>
+				<li><a href="my-page.jsp">나의일정리스트</a></li>
 				<li><a id="make-plan" href="#layer2">일정만들기</a></li>
 				<li><a href="other-plan.jsp">여행일정보기</a></li>
 				<li><a href="search-loc.jsp">여행지검색</a></li>
@@ -264,7 +264,7 @@ function addMember(){
 						</div>
 					</form>
 					<div class="btn-r">
-						<a href="schedule-detail.html" class="btn-layerClose">만들기</a> <a
+						<a href="schedule-detail.jsp" class="btn-layerClose">만들기</a> <a
 							href="#" class="btn-layerClose">닫기</a>
 					</div>
 
@@ -290,7 +290,7 @@ function addMember(){
 					<label> 여행 가는 기간 : </label> <input id="travel-day" type="text"
 						class="plan-title"> </input>
 					<div class="btn-r">
-						<a href="schedule-detail.html" class="btn-layerClose">만들기</a> <a
+						<a href="schedule-detail.jsp" class="btn-layerClose">만들기</a> <a
 							href="#" class="btn-layerClose">닫기</a>
 					</div>
 					<!--// content-->

@@ -69,6 +69,7 @@
 			</div>
 			<div class="opinion-content">
 				<legend>Your comments <a> show </a></legend>
+				<hr class="mitem hidden"/>
 				<p class="hidden">et mi ac magna cep lobortis faucibus accumsan enim lacinia
 					adipiscing metus urna adipiscing cep commodo id. Ac quis arcu amet.
 					Aet mi ac magna cep lobortis faucibus accumsan enim lacinia
@@ -85,15 +86,16 @@
 					faucibus accumsan enim lacinia adipiscing metus urna adipiscing cep
 					commodo id. Ac quis arcu amet. Arcu n</p>
 			</div>
-			<div class="opinion-content hidden">
-				<form>
-					<fieldset>
-						<legend>Your comments</legend>
-						<p>
-							<textarea class="noscrollbars"></textarea>
-						</p>
-					</fieldset>
-				</form>
+			<div class="opinion-content">
+				<legend>Your comments <a> show </a></legend>
+				<hr class="mitem hidden"/>
+				<p class="hidden">
+				
+				et mi ac magna cep lobortis faucibus accumsan enim lacinia
+					adipiscing metus urna adipiscing cep commodo id. Ac quis arcu amet.
+					Aet mi ac magna cep lobortis faucibus accumsan enim lacinia
+					adipiscing metus urna adipiscing cep commodo id. Ac quis arcu amet.
+					A</p>
 			</div>
 		</div>
 		<hr class="mitem" />
@@ -112,14 +114,13 @@
 					commodo id. Ac quis arcu amet. Arcu n</p>
 			</div>
 			<div class="opinion-content">
-
-				<legend>Your comments</legend>
-				<p>et mi ac magna cep lobortis faucibus accumsan enim lacinia
+				<legend>Your comments <a> show </a></legend>
+				<hr class="mitem hidden"/>
+				<p class="hidden">et mi ac magna cep lobortis faucibus accumsan enim lacinia
 					adipiscing metus urna adipiscing cep commodo id. Ac quis arcu amet.
 					Aet mi ac magna cep lobortis faucibus accumsan enim lacinia
 					adipiscing metus urna adipiscing cep commodo id. Ac quis arcu amet.
 					A</p>
-
 			</div>
 		</div>
 		<hr class="mitem" />

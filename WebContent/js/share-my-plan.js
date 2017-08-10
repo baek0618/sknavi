@@ -23,6 +23,22 @@
 
 	});
 
+	//a 버튼 클릭 
+	$('.opinion-content a').on('click', function() {
+		//alert("a clicked");
+		if ( $(this).closest('div').find('p').hasClass('hidden') === true) {
+			// 속성값이 존재함.
+			
+			$(this).closest('div').find('p.hidden').removeClass('hidden').addClass('show');
+			$(this).closest('div').find('hr.hidden').removeClass('hidden').addClass('show');
+		//$('.opinion-content p', this).removeClass('hidden').addClass('show');
+		} else if ($(this).closest('div').find('p').hasClass('show') === true) {
+			$(this).closest('div').find('p.show').removeClass('show').addClass('hidden');
+			$(this).closest('div').find('hr.show').removeClass('show').addClass('hidden');
+		
+		}
+	});
+
 
 	function share_popup(el) {
 		var $el = $(el); // 레이어의 id를 $el 변수에 저장

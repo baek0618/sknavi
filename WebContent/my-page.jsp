@@ -1,9 +1,6 @@
-<!DOCTYPE HTML>
-<!--
-	Ion by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
 <head>
@@ -25,7 +22,7 @@
 <link rel="stylesheet" href="css/my-page.css" />
 
 
-	
+
 <script>
 	<!-- header load -->
 	$(document).ready(function() {
@@ -68,15 +65,18 @@
 		</header>
 		<section id="content" class="plans-container">
 			<div class="row">
+
 				<div class="4u">
-					<section class="special box">
-						<a href="plan-detail.html"><img class="item-image" src="images/banner.jpg" /></a>
-						<hr class="mitem" />
-						<h3 class="item-loc">구 서울역사</h3>
-						<p class="item-detail">간단한 설명 - et mi ac magna cep lobortis
-							faucibus accumsan enim lacinia adipiscing metus urna adipiscing
-							cep commodo id. Ac quis arcu amet. Arcu n</p>
-					</section>
+					<a href="plan-detail.jsp">
+						<section class="special box">
+							<img class="item-image" src="images/banner.jpg" />
+							<hr class="mitem" />
+							<h3 class="item-loc">구 서울역사</h3>
+							<p class="item-detail">간단한 설명 - et mi ac magna cep lobortis
+								faucibus accumsan enim lacinia adipiscing metus urna adipiscing
+								cep commodo id. Ac quis arcu amet. Arcu n</p>
+						</section>
+					</a>
 				</div>
 				<div class="4u">
 					<section class="special box">
@@ -91,7 +91,7 @@
 				<div class="4u">
 					<section class="special box">
 						<a href="#"><img class="item-image" src="images/banner.jpg" /></a>
-						<hr class="mitem"/>
+						<hr class="mitem" />
 						<h3 class="item-loc">구 서울역사</h3>
 						<p class="item-detail">간단한 설명 - et mi ac magna cep lobortis
 							faucibus accumsan enim lacinia adipiscing metus urna adipiscing
