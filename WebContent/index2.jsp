@@ -38,95 +38,6 @@
 	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
 	crossorigin="anonymous"></script>
 
-<script>
-
-var id;
-var pw;
-var ph;
-
-    function checkId() {
-    	 id = $("#sign_id");	
-			if (id.val().length <= 3) {	
-				$("#idCheck").val("4자 이상 입력해주세요");
-			} else {
-				$.ajax({
-					url : 'http://localhost:8087/sknavi/duplicate.do',
-					type : 'POST',
-					data : {
-						"id" : id.val()
-					},
-					dataType : "text",
-					success : function(data) {
-					if (data != "fail") {
-							$("#idCheck").val("중복된 아이디 입니다.");
-							//$("#btn_click").attr("type", "hidden");
-						} else {
-							$("#idCheck").val("ok");
-							
-						//	$("#btn_click").attr("type", "submit");
-						}
-					},
-					error : function(request, status, error) {
-						alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
-					}
-				});
-			}
-	}
-    function checkPw() {
-    	 pw = $("#sign_pw");
-    	if (pw.val().length <= 5) {
-			$("#pwCheck").val("6자 이상 입력해주세요");
-		//	$("#btn_click").attr("type", "hidden");
-		}else 
-			$("#pwCheck").val("ok");
-    }
-    
-    function checkPh() {
-    	
-    	 ph = $("#sign_ph");
-    
-    	if (ph.val().length <= 6) {
-    	//	$("#btn_click").attr("type", "hidden");
-			$("#phCheck").val("올바른 번호가 아닙니다");
-		}else 
-			$("#phCheck").val("ok");
-    }
-    
-function addMember(){
-	var name = $("#sign_name");
-	var birth= $("#sign_birth");
-		id = $("#sign_id");
-		pw = $("#sign_pw");
-		ph = $("#sign_ph");
-	
-	if (id.val().length <= 3){
-		alert("아이디 4글자 이상 입력해주세요.");
-		return;
-	}
-	console.log("ddd"+pw.val());
-	if (pw.val().length <= 5 || pw.val()===null){
-		alert("비밀번호를 6글자 이상 입력해주세요.");
-		return;
-	}
-	if (ph.val().length <= 6) {
-		alert("올바른 번호를 입력해주세요.");
-		return;
-	}
-	if (name.val().length <= 1) {
-		alert("올바른 이름을 입력해주세요.");
-		return;
-	}
-	if (birth.val().length <= 0) {
-		alert("올바른 생일을 입력해주세요.");
-		return;
-	}
-	document.form1.submit();
-	alert("회원가입 완료되었습니다!!");
-}
-    
-    
-</script>
- 
 </head>
 
 
@@ -149,32 +60,13 @@ function addMember(){
 		</h1>
 		<nav id="nav">
 			<ul>
-				<li><a href="my-page.jsp">나의일정리스트</a></li>
+				<li><a href="my-page.html">나의일정리스트</a></li>
 				<li><a id="make-plan" href="#layer2">일정만들기</a></li>
 				<li><a href="other-plan.jsp">여행일정보기</a></li>
 				<li><a href="search-loc.jsp">여행지검색</a></li>
-				<c:choose>
-					<c:when test="${userId == null}">
-						<li><a id="login_btn" href="#login" class="button special">login</a></li>
-					</c:when>
-					<c:otherwise>
-        			${userId}님이 로그인중입니다.
-       	 			<li><a id="login_btn" href="logout.do"
-							class="button special">logout</a></li>
-					</c:otherwise>
-				</c:choose>
-				<c:choose>
-					<c:when test="${err != null}">
-						<script>alert("아이디 또는 비밀번호를 확인해 주세요.")
-						</script>
-						<%
-							session.removeAttribute("err");
-						%>
-					</c:when>
-					<c:otherwise>
-					</c:otherwise>
-				</c:choose>
-				<li><a id="sign-btn" href="#sign-in" class="button special">Sign Up</a></li>
+				<li><a id="login_btn" href="#login" class="button special">로그인</a></li>
+				<li><a id="sign-btn" href="#sign-in" class="button special">Sign
+						Up</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -211,14 +103,12 @@ function addMember(){
 				<div class="pop-conts">
 					<!--content //-->
 					<p class="ctxt mb20">로그인해주세요</p>
-					<form action="login.do" method="post">
-						id : <input id="user_id" name = "user_id" type="text" class="plan-title"/>
-						pw : <input id="user_pw" name = "user_pw" type="password" class="plan-title"/>
-						<div class="btn-r">
-						<input type="submit" value="전송"> <a href="#"
-								class="btn-layerClose">닫기</a>
-						</div>
-					</form>
+					id : <input id="user_id" type="text" class="plan-title"> </input>
+					pw : <input id="user_pw" type="password" class="plan-title">
+					<div class="btn-r">
+						</input> <input type="submit" value="전송"> <a href="#"
+							class="btn-layerClose">닫기</a>
+					</div>
 					<!--// content-->
 				</div>
 			</div>
@@ -232,42 +122,20 @@ function addMember(){
 			<div class="pop-container">
 				<div class="pop-conts">
 					<!--content //-->
-					<form id="form1" name="form1" method="post"
-						action="insertMember.do">
-						<p class="ctxt mb20">회원가입</p>
-						<div class="form-group">
-							id : <input type="textarea"  id = "idCheck" style="border: 0px; background-color: white;" value="" readonly/>
-							<input id="sign_id" name="id" type="text" size="10px" oninput="checkId()"/>
-						</div>
-						<div class="form-group">
-							이름 : <input id="sign_name" name="name" type="text" 
-								class="plan-title" size=""/> 
-								pw : <input type="textarea" id = "pwCheck" tabindex="-1" style="border: 0px; background-color: white;" value="" readonly/>
-								<input id="sign_pw"  
-								width="50px" name="password" type="password" class="plan-title"  oninput="checkPw()"/>
-						</div>
-						<div class="form-group">
-							<!-- pw check: <input id="sign_pw" name="password" type="password" class="plan-title"> -->
-							phone : <input type="textarea" id = "phCheck" tabindex="-1" style="border: 0px; background-color: white;" value="" readonly/>
-							<input id="sign_ph" name="phone" type="text"
-								class="plan-title" oninput="checkPh()" />
-						</div>
-						<div class="form-group">
-							<label>birth : </label> <input id = "sign_birth" type="date" name="birth" />
-						</div>
-					
-						<div class="btn-r">
-							<!-- 	<a href="schedule-detail.html" class="btn-layerClose">만들기</a> -->
-							<input id="btn_click" type="button" value="확인" onclick="addMember()"/> 
-							<input id="cancel" type="button" value="취소" />
-
-						</div>
+					<p class="ctxt mb20">여행 계획을 입력해 주세요.</p>
+					id : <input id="sign_id" type="text" class="plan-title"> </input>
+					이름 : <input id="sign_id" type="text" class="plan-title"> </input>
+					pw : <input id="sign_pw" type="password" class="plan-title">
+					</input> pw check: <input id="sign_pw" type="password" class="plan-title">
+					</input> phone : <input id="sign_id" type="text" class="plan-title">
+					</input>
+					<form>
+						<label>birth : </label> <input type="date">
 					</form>
 					<div class="btn-r">
-						<a href="schedule-detail.jsp" class="btn-layerClose">만들기</a> <a
+						<a href="schedule-detail.html" class="btn-layerClose">만들기</a> <a
 							href="#" class="btn-layerClose">닫기</a>
 					</div>
-
 					<!--// content-->
 				</div>
 			</div>
@@ -290,7 +158,7 @@ function addMember(){
 					<label> 여행 가는 기간 : </label> <input id="travel-day" type="text"
 						class="plan-title"> </input>
 					<div class="btn-r">
-						<a href="schedule-detail.jsp" class="btn-layerClose">만들기</a> <a
+						<a href="schedule-detail.html" class="btn-layerClose">만들기</a> <a
 							href="#" class="btn-layerClose">닫기</a>
 					</div>
 					<!--// content-->
