@@ -64,7 +64,7 @@ public class findBoardController {
 			DayVO day = dayDao.getDayPlaces(101); // placeid 넘겨야 됨
 			//		model.addAttribute("day", day); // 일정가지고오기
 			
-			model.addAttribute("day",day);
+			//model.addAttribute("day",day);
 			model.addAttribute("comments", comment);
 			model.addAttribute("board", board);			
 			model.addAttribute("memberId", member.getId());
