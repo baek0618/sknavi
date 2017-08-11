@@ -2,25 +2,25 @@ package planner.day;
 
 import planner.place.PlaceVO;
 
-public class DayVo {
+public class DayVO {
 	
 	private Integer dayId;
 	private Integer scheduleId;
 	private Integer day;
 	private Integer seq;
 	private String content;
-	private PlaceVO palce;
+	private PlaceVO place;
 
-	public DayVo() {}
+	public DayVO() {}
 	
-	public DayVo(Integer dayId ,Integer scheduleId, Integer day, Integer seq, String content, PlaceVO palce) {
+	public DayVO(Integer dayId ,Integer scheduleId, Integer day, Integer seq, String content, PlaceVO place) {
 		super();
 		this.dayId = dayId;
 		this.scheduleId = scheduleId;
 		this.day = day;
 		this.seq = seq;
 		this.content = content;
-		this.palce = palce;
+		this.place = place;
 	}
 	
 	public Integer getDayId() {
@@ -64,11 +64,11 @@ public class DayVo {
 	}
 
 	public PlaceVO getPalce() {
-		return palce;
+		return place;
 	}
 
-	public void setPalce(PlaceVO palce) {
-		this.palce = palce;
+	public void setPalce(PlaceVO place) {
+		this.place = place;
 	}
 
 

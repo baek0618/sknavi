@@ -14,20 +14,25 @@ public class DayDAOImpl implements DayDAO {
 	
 	//Day 생성
 	@Override
-	public void addDay(DayVo dayVo) {
+	public void addDay(DayVO dayVo) {
 		session.insert("dayMapper.insertDay", dayVo);
 	}
 	
 	//Day 한개 조회
 	@Override
-	public DayVo getDay(Integer dayId) {
+	public DayVO getDay(Integer dayId) {
 		System.out.println("getDay call");
 		return session.selectOne("dayMapper.selectDay", dayId);
+	}
+	
+	@Override
+	public DayVO getDayPlaces(Integer placeId)  {
+		return session.selectOne("dayMapper.viewScheduleDetail", placeId);
 	}
 
 	//Day 조회(스케줄에 포함된 daylist)
 	@Override
-	public List<DayVo> getDays(Integer scheduleId) {
+	public List<DayVO> getDays(Integer scheduleId) {
 		System.out.println("getDays call");
 		return session.selectList("dayMapper.selectDays", scheduleId);
 	}
@@ -46,9 +51,10 @@ public class DayDAOImpl implements DayDAO {
 	
 	//Day 수정
 	@Override
-	public void updateDay(DayVo dayVo) {
+	public void updateDay(DayVO dayVo) {
 		session.update("dayMapper.updatetDay", dayVo);
 	}
-
+	
+	
 
 }

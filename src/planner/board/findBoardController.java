@@ -1,6 +1,5 @@
 package planner.board;
 
-import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
 import java.util.List;
 
@@ -10,16 +9,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import planner.comment.commentDAO;
 import planner.comment.commentVO;
+import planner.day.DayDAO;
+import planner.day.DayVO;
 import planner.member.memberDAO;
 import planner.member.memberVO;
 import planner.schedule.ScheduleDAO;
-import planner.schedule.ScheduleVO;
 
 @Controller
 public class findBoardController {
@@ -32,12 +31,15 @@ public class findBoardController {
 	memberDAO memberDao;
 	@Autowired
 	ScheduleDAO scheduleDao;
+	@Autowired
+	DayDAO dayDao;
 	
 
 	@RequestMapping("/viewBoards.do")
 	public ModelAndView viewAllBoards(Model model) {
+		System.out.println(": : ::::::::dfdfdf" );
 		List<boardVO> board = boardDao.viewItemsBoards();
-		System.out.println(": : ::::::::" +board.get(0).getSchedule() );
+		
 		model.addAttribute("board", board);
 		return new ModelAndView("other-plan");
 	}
@@ -54,16 +56,21 @@ public class findBoardController {
 			board.getBoard_id();
 			boardDao.improveOfHit(board);
 			
+			// 댓글 
 			List<commentVO> comment = commentDao.viewAllComments(board);
-			memberVO member = memberDao.getMember("name");
+			memberVO member = memberDao.getMember("name"); // <-- id 
 			
+			//일정
+			DayVO day = dayDao.getDayPlaces(101); // placeid 넘겨야 됨
+			//		model.addAttribute("day", day); // 일정가지고오기
 			
+			model.addAttribute("day",day);
 			model.addAttribute("comments", comment);
 			model.addAttribute("board", board);			
 			model.addAttribute("memberId", member.getId());
 
 		}
-		return "boardDetailList";
+		return "other-plan-detail";
 	}
 	
 	@RequestMapping("/moveToPost.do")

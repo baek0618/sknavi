@@ -50,33 +50,36 @@
 	<!-- Main -->
 	<section id="main" class="wrapper style1"> <header
 		class="major">
-	<h2>싱가폴 여행계획</h2>
-	<p>2017.07.05 ~ 2017.07.10</p>
+	<h2>싱가폴 여행계획 : ${schedule.subject} </h2>
+	<p>${board.board_date}</p>
+	
+	
+	<td align="center">${board.board_id}</a></td>
+	<td align="center">${board.board_content}</td>
+	<td align="center">${board.board_hit}</td>
+	<td align="center">${board.board_date}</td>
+	<td align="center">${board.board_like}</td>
+	
+
 
 	</header> <section id="content" class="loc-container">
 	<div class="box loc-container-left">
 		<section class="day box">
 
-		<h2>Day-1</h2>
+		<h2> ${day.day} :: Day-1</h2>
 		<hr class="mitem" />
 		<div class="s-item ">
 			<a href="#"><img class="item-image" src="images/banner.jpg" /></a>
 			<div class="item-content">
-				<h3 class="item-loc">구 서울역사</h3>
-				<p class="item-detail">간단한 설명 - et mi ac magna cep lobortis
-					faucibus accumsan enim lacinia adipiscing metus urna adipiscing cep
-					commodo id. Ac quis arcu amet. Arcu n</p>
+				<h3 class="item-loc"> 구 서울역사 locat </h3>
+				<p class="item-detail"> 간단한 설명 - ${board.board_content}</p>
 			</div>
 			<div class="opinion-content">
 				<legend>
 					Your comments <a> show </a>
 				</legend>
 				<hr class="mitem hidden" />
-				<p class="hidden">et mi ac magna cep lobortis faucibus accumsan
-					enim lacinia adipiscing metus urna adipiscing cep commodo id. Ac
-					quis arcu amet. Aet mi ac magna cep lobortis faucibus accumsan enim
-					lacinia adipiscing metus urna adipiscing cep commodo id. Ac quis
-					arcu amet. A</p>
+				<p class="hidden"> day.content </p>
 			</div>
 		</div>
 		<hr class="mitem" />

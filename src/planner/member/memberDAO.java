@@ -8,6 +8,8 @@ import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
+import planner.day.DayVO;
+
 
 @Repository
 public class memberDAO extends SqlSessionDaoSupport{
@@ -26,6 +28,8 @@ public class memberDAO extends SqlSessionDaoSupport{
 		}
 		return result;
 	}
+	
+	
 	
 	public List<memberVO> searchMember()  {
 		return getSqlSession().selectList("memberMapper.getAllUser");
