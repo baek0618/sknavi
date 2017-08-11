@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -73,29 +75,30 @@
 	</section>
 
 	<!-- Main -->
-	
+
+
+
 	<!-- One -->
 	<section id="one" class="wrapper style1">
 
 	<div class="content_filter container">
 		<div class="area_silver">
 			<div class="wrap">
-				<div class="area_title"> 다른 여행 계획 필터</div>
+				<div class="area_title">다른 여행 계획 필터</div>
 				<div class="travel_box">
 					<div class="travel_section">
 						<div class="travel_left">지역</div>
-						<a href="#" class="travel_a_city"> 서울<input type="checkbox" name = "box1"/> </a> 
-						 <a	href="/ko/city/jeju_312" class="travel_a_city"> 제주 </a> <a
-							href="#" class="travel_a_city"> 부산 </a> <a
-							href="#" class="travel_a_city"> 경주 </a>
-						<a href="#" class="travel_a_city">
+						<a href="#" class="travel_a_city"> 서울<input type="checkbox"
+							name="box1" />
+						</a> <a href="/ko/city/jeju_312" class="travel_a_city"> 제주 </a> <a
+							href="#" class="travel_a_city"> 부산 </a> <a href="#"
+							class="travel_a_city"> 경주 </a> <a href="#" class="travel_a_city">
 							양평 </a> <a href="/ko/city/taean-gun_10991" class="travel_a_city">
 							태안 </a> <a href="/ko/city/jinju-si_11036" class="travel_a_city">
 							진주 </a> <a href="/ko/city/gangneung-si_10933" class="travel_a_city">
 							강릉 </a>
 						<div class="clear"></div>
 					</div>
-					
 				</div>
 			</div>
 		</div>
@@ -103,74 +106,40 @@
 	</div>
 	</section>
 
+
+
 	<section>
 	<div class="container">
-		<div class="row">
+
+		<c:set var="i" value="0" />
+		<c:set var="j" value="3" />
+
+		<c:forEach var="A" items="${board}">
+			<c:if test="${i%j == 0 }">
+				<div class="row">
+			</c:if>
+			<!--  value  -->
 			<div class="4u">
 				<section class="special box"> <a href="#"><img
 					class="item-image" src="images/banner.jpg" /></a>
 				<hr class="mitem" />
-				<h3 class="item-loc">구 서울역사</h3>
-				<p class="item-detail">간단한 설명 - et mi ac magna cep lobortis
-					faucibus accumsan enim lacinia adipiscing metus urna adipiscing cep
-					commodo id. Ac quis arcu amet. Arcu n</p>
+				<h3 class="item-loc">
+					<a href="viewDetailBoard.do?board_id=${A.board_id}">${A.schedule.subject}</a>
+				</h3>
+				<p class="item-detail">${A.board_content}</p>
+				hit : <a href="viewDetailBoard.do?board_id=${A.board_id}">${A.board_hit}</a>
+				like : <a href="viewDetailBoard.do?board_id=${A.board_id}">${A.board_like}</a>
+
 				</section>
 			</div>
-			<div class="4u">
-				<section class="special box"> <a href="#"><img
-					class="item-image" src="images/banner.jpg" /></a>
-				<hr class="mitem" />
-				<h3 class="item-loc">구 서울역사</h3>
-				<p class="item-detail">간단한 설명 - et mi ac magna cep lobortis
-					faucibus accumsan enim lacinia adipiscing metus urna adipiscing cep
-					commodo id. Ac quis arcu amet. Arcu n</p>
-				</section>
-			</div>
-			<div class="4u">
-				<section class="special box"> <a href="#"><img
-					class="item-image" src="images/banner.jpg" /></a>
-				<hr class="mitem" />
-				<h3 class="item-loc">구 서울역사</h3>
-				<p class="item-detail">간단한 설명 - et mi ac magna cep lobortis
-					faucibus accumsan enim lacinia adipiscing metus urna adipiscing cep
-					commodo id. Ac quis arcu amet. Arcu n</p>
-				</section>
-			</div>
-		</div>
-		
-		<div class="row">
-			<div class="4u">
-				<section class="special box"> <a href="#"><img
-					class="item-image" src="images/banner.jpg" /></a>
-				<hr class="mitem" />
-				<h3 class="item-loc">구 서울역사</h3>
-				<p class="item-detail">간단한 설명 - et mi ac magna cep lobortis
-					faucibus accumsan enim lacinia adipiscing metus urna adipiscing cep
-					commodo id. Ac quis arcu amet. Arcu n</p>
-				</section>
-			</div>
-			<div class="4u">
-				<section class="special box"> <a href="#"><img
-					class="item-image" src="images/banner.jpg" /></a>
-				<hr class="mitem" />
-				<h3 class="item-loc">구 서울역사</h3>
-				<p class="item-detail">간단한 설명 - et mi ac magna cep lobortis
-					faucibus accumsan enim lacinia adipiscing metus urna adipiscing cep
-					commodo id. Ac quis arcu amet. Arcu n</p>
-				</section>
-			</div>
-			<div class="4u">
-				<section class="special box"> <a href="#"><img
-					class="item-image" src="images/banner.jpg" /></a>
-				<hr class="mitem" />
-				<h3 class="item-loc">구 서울역사</h3>
-				<p class="item-detail">간단한 설명 - et mi ac magna cep lobortis
-					faucibus accumsan enim lacinia adipiscing metus urna adipiscing cep
-					commodo id. Ac quis arcu amet. Arcu n</p>
-				</section>
-			</div>
-		</div>
+			<c:if test="${i%j == j-1 }">
+			</c:if>
+			<c:set var="i" value="${i+1 }" />
+		</c:forEach>
 	</div>
+
+
+
 	</section>
 
 	<!-- Footer -->

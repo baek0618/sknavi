@@ -29,15 +29,12 @@ public class memberController {
 	memberVO globalVO;
 	
 	@RequestMapping("/getMember.do")
-	
-	public int getUser(@RequestParam String id) {
+	public String getUser(@RequestParam String id, Model model) {
 		memberVO memberValue = memberDao.getMember(id);
-		int cnt = 1;
-		if (memberValue!=null) {
-			cnt=0;
-			System.out.println("아이디 존재 !");
-		}
-		return cnt;
+		model.addAttribute("member", memberValue);
+		
+		// jsp 넘김 
+		return "member";
 	}
 	
 	@RequestMapping("/memberForm.do")

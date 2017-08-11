@@ -1,71 +1,83 @@
 package planner.schedule;
 
-import java.util.Date;
-
 public class ScheduleVO {
+   private String scheduleId;
+   private String startDate;
+   private int day;
+   private String subject;
+   private String id;
+   private String location;
 
-	private int scheduleId;
-	private Date startDate;
-	private int day;
-	private String subject;
-	private String id;
+   public ScheduleVO() {
+      // TODO Auto-generated constructor stub
+   }
 
-	public int getScheduleId() {
-		return scheduleId;
-	}
+   public ScheduleVO(String scheduleId, String startDate, int day, String subject, String id, String location) {
+      super();
+      this.scheduleId = scheduleId;
+      this.startDate = startDate;
+      this.day = day;
+      this.subject = subject;
+      this.id = id;
+      this.location = location;
+   }
 
-	public void setScheduleId(int scheduleId) {
-		this.scheduleId = scheduleId;
-	}
+   
+   
+   public String getScheduleId() {
+      return scheduleId;
+   }
 
-	public Date getStartDate() {
-		return startDate;
-	}
+   public void setScheduleId(String scheduleId) {
+      this.scheduleId = scheduleId;
+   }
 
-	public void setStartDate(Date startDate) {
-		this.startDate = startDate;
-	}
+   public String getStartDate() {
+      return startDate;
+   }
 
-	public int getDay() {
-		return day;
-	}
+   public void setStartDate(String startDate) {
+      this.startDate = startDate;
+   }
 
-	public void setDay(int day) {
-		this.day = day;
-	}
+   public int getDay() {
+      return day;
+   }
 
-	public String getSubject() {
-		return subject;
-	}
+   public void setDay(int day) {
+      this.day = day;
+   }
 
-	public void setSubject(String subject) {
-		this.subject = subject;
-	}
+   public String getSubject() {
+      return subject;
+   }
 
-	public String getId() {
-		return id;
-	}
+   public void setSubject(String subject) {
+      this.subject = subject;
+   }
 
-	public void setId(String id) {
-		this.id = id;
-	}
+   public String getId() {
+      return id;
+   }
 
-	public ScheduleVO() {
-		// TODO Auto-generated constructor stub
-	}
+   public void setId(String id) {
+      this.id = id;
+   }
 
-	public ScheduleVO(int scheduleId, Date startDate, int day, String subject, String id) {
-		super();
-		this.scheduleId = scheduleId;
-		this.startDate = startDate;
-		this.day = day;
-		this.subject = subject;
-		this.id = id;
-	}
+   public String getLocation() {
+      return location;
+   }
 
-	@Override
-	public String toString() {
-		return "scheduleVO [scheduleId=" + scheduleId + ", startDate=" + startDate + ", day=" + day + ", subject="
-				+ subject + ", id=" + id + "]";
-	}
+   public void setLocation(String location) {
+      this.location = location;
+   }
+
+   @Override
+   public String toString() {
+      return "ScheduleVO [scheduleId=" + scheduleId + ", startDate=" + startDate + ", day=" + day + ", subject="
+            + subject + ", id=" + id + ", location=" + location + "]";
+   }
+
+   
+   
 }

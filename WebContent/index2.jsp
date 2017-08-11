@@ -235,7 +235,8 @@ function testAPI() {
          <ul>
             <li><a href="my-page.html">나의일정리스트</a></li>
             <li><a id="make-plan" href="#layer2">일정만들기</a></li>
-            <li><a href="other-plan.jsp">여행일정보기</a></li>
+          <!-- other-plan.jsp -->
+            <li><a href="viewBoards.do?">여행일정보기</a></li>
             <li><a href="search-loc.jsp">여행지검색</a></li>
             <c:choose>
                <c:when test="${userId == null}">         <!-- userId 세션값이 없으면 로그인 버튼 노출 -->

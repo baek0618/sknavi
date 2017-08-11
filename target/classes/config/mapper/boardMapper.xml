@@ -2,52 +2,96 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="boardMapper">
 
-	<select id="viewDetailBoard" parameterType="int" resultType="planner.board.boardVO" >
-		select board_id, board_date, board_img_path, board_content, board_hit, board_like 
-		  from board 
+	<select id="viewDetailBoard" parameterType="int"
+		resultType="planner.board.boardVO">
+		select board_id, board_date,
+		board_img_path, board_content,
+		board_hit, board_like
+		from board
 		where board_id=#{value}
 	</select>
-	
-	<select id="viewAllBoards" resultType="planner.board.boardVO" >
+
+	<select id="viewAllBoards" resultType="planner.board.boardVO">
 		select *
-		  from board
+		from board
 	</select>
+
+	<select id="viewItemList" resultMap="boardVOMap">
+		select
+		b.board_id itemId,
+		b.board_date itemDate,
+		b.board_img_path itemImgPath,
+		b.board_content
+		itemContent,
+		b.board_hit itemHit,
+		b.board_like itemLike,
+		s.schedule_id
+		itemScheduleId,
+		s.subject itemSubject
+		from board b, schedule s
+		where
+		b.schedule_id =
+		s.schedule_id
+	</select>
+	<resultMap id="boardVOMap" type="planner.board.boardVO">
+		<id property="board_id" column="itemId" javaType="String" jdbcType="VARCHAR" />
+		<result property="board_date" column="itemDate" javaType="String"
+			jdbcType="VARCHAR" />
+		<result property="img_path" column="itemImgPath" javaType="String"
+			jdbcType="VARCHAR" />
+		<result property="board_content" column="itemContent" javaType="String" jdbcType="VARCHAR" />
+		<result property="board_hit" column="itemHit" javaType="Integer" jdbcType="NUMERIC" />
+		<result property="board_like" column="itemLike" javaType="Integer" jdbcType="NUMERIC" />
+		<result property="schedule.scheduleId" column="itemScheduleId"
+			javaType="String" jdbcType="NUMERIC" />
+		<result property="schedule.subject" column="itemSubject"
+			javaType="String" jdbcType="VARCHAR" />
+	</resultMap>
+
 
 	<update id="improveOfHit" parameterType="planner.board.boardVO">
 		update board
-			 set board_hit = #{board_hit}
-		 where board_id = #{board_id}
+		set
+		board_hit = #{board_hit}
+		where board_id = #{board_id}
 	</update>
-	
+
 	<update id="improveOfLike" parameterType="planner.board.boardVO">
 		update board
-			 set board_like = #{board_like}
-		 where board_id = #{board_id}
+		set
+		board_like = #{board_like}
+		where board_id = #{board_id}
 	</update>
-	
+
 	<insert id="addComment" parameterType="planner.comment.commentVO">
-		insert into comments(comments, comment_date, id, board_id)
-     		 values(#{comments}, #{comment_date}, #{member.id}, #{board.board_id})
+		insert into
+		comments(comments, comment_date, id, board_id)
+		values(#{comments},
+		#{comment_date}, #{member.id}, #{board.board_id})
 	</insert>
-	
-	<select id="viewAllComments" parameterType="planner.board.boardVO" resultType="planner.comment.commentVO">
+
+	<select id="viewAllComments" parameterType="planner.board.boardVO"
+		resultType="planner.comment.commentVO">
 		select comment_id, comments, comment_date
-		  from comments
+		from comments
 		where board_id=#{board_id}
 	</select>
-	
+
 	<update id="updateComment" parameterType="planner.comment.commentVO">
 		update comments
-		     set comments=#{comments}
-		 where board_id=#{board.board_id}
-		    and id = #{member.id}
-		    and comment_id = #{comment_id}
+		set
+		comments=#{comments}
+		where board_id=#{board.board_id}
+		and id =
+		#{member.id}
+		and comment_id = #{comment_id}
 	</update>
-	
+
 	<delete id="deleteComment" parameterType="planner.comment.commentVO">
 		delete from comments
-		 where board_id=#{board.board_id}
-		    and id = #{member.id}
-		    and comment_id = #{comment_id}
+		where board_id=#{board.board_id}
+		and id = #{member.id}
+		and comment_id =
+		#{comment_id}
 	</delete>
 </mapper>

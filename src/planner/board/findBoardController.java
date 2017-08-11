@@ -18,6 +18,8 @@ import planner.comment.commentDAO;
 import planner.comment.commentVO;
 import planner.member.memberDAO;
 import planner.member.memberVO;
+import planner.schedule.ScheduleDAO;
+import planner.schedule.ScheduleVO;
 
 @Controller
 public class findBoardController {
@@ -28,13 +30,16 @@ public class findBoardController {
 	commentDAO commentDao;
 	@Autowired
 	memberDAO memberDao;
+	@Autowired
+	ScheduleDAO scheduleDao;
 	
 
 	@RequestMapping("/viewBoards.do")
-	public ModelAndView viewAllBoards() {
-		List<boardVO> board = boardDao.viewAllBoards();
-		
-		return new ModelAndView("boardList", "board", board);
+	public ModelAndView viewAllBoards(Model model) {
+		List<boardVO> board = boardDao.viewItemsBoards();
+		System.out.println(": : ::::::::" +board.get(0).getSchedule() );
+		model.addAttribute("board", board);
+		return new ModelAndView("other-plan");
 	}
 	
 	@RequestMapping("/viewDetailBoard.do")
@@ -50,7 +55,8 @@ public class findBoardController {
 			boardDao.improveOfHit(board);
 			
 			List<commentVO> comment = commentDao.viewAllComments(board);
-			memberVO member = memberDao.getMember("ky");
+			memberVO member = memberDao.getMember("name");
+			
 			
 			model.addAttribute("comments", comment);
 			model.addAttribute("board", board);			
